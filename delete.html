@@ -640,3 +640,247 @@
             </div>
             <p class="photo-credit">Photos in app from <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
         </main>
+
+
+
+
+ <!-- Login Section -->
+ <main role="main" id="login-screen" class="bg" style="display: none;">
+        <div class="landing-width">
+            <div class="landing-bg">
+                <h2>
+                    Attract It!
+                </h2>
+                <p class="demo">
+                    To view a demo: <br> email: demo@email.com <br> password: demo123
+                </p>
+                <span class="js-signin-success change-status"></span>
+                <form role="form" id="login-form" class="landing-form">
+                    <h3>
+                        Log In
+                    </h3>
+                    <span class="login-error"></span>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="js-userName" value="">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="js-userPw" class="pw" value="">
+                    <button role="button" name="login" class="login-button" id="js-login-button"
+                        type="submit">Log In<svg
+                            class="svg-inline--fa fa-chevron-circle-right fa-w-16 button-icon"
+                            aria-hidden="true" data-prefix="far" data-icon="chevron-circle-right" role="img"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M8 256c0 137 111 248 248 248s248-111 248-248S393 8 256 8 8 119 8 256zm448 0c0 110.5-89.5 200-200 200S56 366.5 56 256 145.5 56 256 56s200 89.5 200 200zm-107.5 8.5L225.7 387.3c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l91.7-91.7-91.7-91.7c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l122.8 122.8c4.7 4.7 4.7 12.3 0 17z">
+                            </path>
+                        </svg>
+                        <!-- <i class="far fa-chevron-circle-right button-icon"></i> --></button>
+                </form>
+                <a href="#" class="account-link js-signup">
+                    If you don't have an account, Sign Up...
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sign Up Section -->
+    <main role="main" id="signup-screen" class="bg" style="">
+        <div class="landing-width">
+            <div class="landing-bg">
+                <h2>
+                    Attract It!
+                </h2>
+                <form role="form" id="signup-form" class="landing-form">
+                    <h3>
+                        Sign Up For an Account
+                    </h3>
+                    <span class="login-error"></span>
+                    <label for="userEmail">
+                        Enter Email Address
+                    </label>
+                    <input type="email" id="user-signup" name="js-user-signup" value="">
+                    <label for="create-pw">
+                        Create a Password
+                    </label>
+                    <input type="password" id="create-pw" name="js-create-pw" value="">
+                    <label for="reenter-pw">
+                        Re-enter Password</label>
+                    <input type="password" id="reenter-password" name="js-reenter-pw" value="">
+                    <button role="button" name="signup" class="login-button" id="js-signup-button"
+                        type="submit">Sign Up<svg
+                            class="svg-inline--fa fa-chevron-circle-right fa-w-16 button-icon"
+                            aria-hidden="true" data-prefix="far" data-icon="chevron-circle-right" role="img"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M8 256c0 137 111 248 248 248s248-111 248-248S393 8 256 8 8 119 8 256zm448 0c0 110.5-89.5 200-200 200S56 366.5 56 256 145.5 56 256 56s200 89.5 200 200zm-107.5 8.5L225.7 387.3c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l91.7-91.7-91.7-91.7c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l122.8 122.8c4.7 4.7 4.7 12.3 0 17z">
+                            </path>
+                        </svg>
+                        <!-- <i class="far fa-chevron-circle-right button-icon"></i> --></button>
+                </form>
+                <a href="#" class="account-link js-login">
+                    If you have an account, Log In...
+                </a>
+            </div>
+        </div>
+
+<!-- 
+        deleted CSS  -->
+<!-- 
+    /* responsive tag samples */ -->
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    html {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        min-height: 100%;
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+        background-color: #fafafa;
+    }
+
+    .container {
+        margin:0 auto;
+        /* max-width: 960px; */
+        text-align: center;
+        background-color: lightslategray
+    }
+
+    .row-profile {
+        height: 
+    }
+
+    
+    label {
+        display: block;
+        padding: 20px 0 5px 0;
+    }
+
+    .tagsinput,
+    .tagsinput * {
+        box-sizing: border-box
+    }
+
+    .tagsinput {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        background: #fff;
+        font-family: sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #556270;
+        padding: 5px 5px 0;
+        border: 1px solid #e6e6e6;
+        border-radius: 2px
+    }
+
+    .tagsinput.focus {
+        border-color: #ccc
+    }
+
+    .tagsinput .tag {
+        position: relative;
+        background: #556270;
+        display: block;
+        max-width: 100%;
+        word-wrap: break-word;
+        color: #fff;
+        padding: 5px 30px 5px 5px;
+        border-radius: 2px;
+        margin: 0 5px 5px 0
+    }
+
+    .tagsinput .tag .tag-remove {
+        position: absolute;
+        background: 0 0;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+        color: #ff6b6b;
+        line-height: 30px;
+        padding: 0;
+        border: 0
+    }
+
+    .tagsinput .tag .tag-remove:after,
+    .tagsinput .tag .tag-remove:before {
+        background: #ff6b6b;
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 2px;
+        top: 14px;
+        left: 10px;
+        content: ''
+    }
+
+    .tagsinput .tag .tag-remove:before {
+        -webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg)
+    }
+
+    .tagsinput .tag .tag-remove:after {
+        -webkit-transform: rotateZ(-45deg);
+        transform: rotateZ(-45deg)
+    }
+
+    .tagsinput div {
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1
+    }
+
+    .tagsinput div input {
+        background: 0 0;
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 5px;
+        border: 0;
+        margin: 0 5px 5px 0
+    }
+
+    .tagsinput div input.error {
+        color: #ff6b6b
+    }
+
+    .tagsinput div input::-ms-clear {
+        display: none
+    }
+
+    .tagsinput div input::-webkit-input-placeholder {
+        color: #ccc;
+        opacity: 1
+    }
+
+    .tagsinput div input:-moz-placeholder {
+        color: #ccc;
+        opacity: 1
+    }
+
+    .tagsinput div input::-moz-placeholder {
+        color: #ccc;
+        opacity: 1
+    }
+
+    .tagsinput div input:-ms-input-placeholder {
+        color: #ccc;
+        opacity: 1
+    }

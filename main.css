@@ -19,7 +19,7 @@
 
 
 body {
-    font-family: 'Crimson Text', serif;
+    font-family: 'Lato', sans-serif;
 }
 
 h1,
@@ -28,10 +28,14 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Crimson Text";
+    font-family: 'Lustria', serif;
     text-align: center;
 }
 
+
+.p {
+    line-height: 1.6;
+}
 
 /* Heading */
 
@@ -46,15 +50,30 @@ h6 {
     padding: 200px;
 }
 
+.container {
+    width: 100%;
+    padding: 8%;
+    background-color: #556270;
+    margin-bottom: 50px;
+}
+
 .container-fluid {
+    width: 100%;
     padding-right: 25px;
-    padding-left: 25 px;
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+#play-game-page {
+    margin: 50px, auto;
+    width: 100%;
+
 }
 
 
 
 h1 {
-    font-family: "Crimson Text";
+    font-family: "Lustria", serif;
     text-align: center;
     font-size: 50px;
     text-align: center;
@@ -63,31 +82,36 @@ h1 {
 }
 
 h2 {
-    color: black;
-    text-align: center;
+    color: white;
+    text-align: left;
+    font-size: 28px;
+    font-family: 'Lustria', serif;
 }
 
 h3 {
     display: block;
     width: 100%;
-    text-align: center;
-    padding: 20px;
-    font-size: 28px;
-    font-family: 'Poppins', Arial, sans-serif;
+    text-align: left;
+    font-size: 20px;
+    font-family: 'Lustria', serif;
     color: white;
+    line-height: 1.6rem;
 }
 
 h4 {
     text-align: center;
-    padding: 10px;
-    font-size: 23px;
-    font-family: 'Poppins', Arial, sans-serif;
+    padding: 25px;
+    font-size: 20px;
+    font-family: 'Lustria', serif;
     color: white;
+    font-weight: bold;
 }
 
 h5 {
     text-align: center;
-    font-family: 'Poppins', Arial, sans-serif;
+
+    font-family: 'Lustria', serif;
+    padding: 15px;
 }
 
 h6 {
@@ -103,14 +127,25 @@ h6 {
 }
 
 
-/* Navigation Bar */
+.card-header p {
+    font-size: 20px;
+    color: white;
+}
 
+.complete-status {
+    text-align: right;
+    padding-top: 9px;
+}
+
+
+/* Navigation Bar */
+/* 
 .navbar {
     padding: 0 0 4.5rem;
   }
   
   .navbar-brand {
-    font-family: "Crimson";
+    font-family: 'Lustria', serif;
     font-size: 2.5rem;
     font-weight: bold;
   }
@@ -121,9 +156,9 @@ h6 {
   
   .nav-link {
     font-size: 1.2rem;
-    font-family: "Montserrat-Light";
+    font-family: 'Lustria', serif;
   }
-  
+   */
 
 /* .nav-bar {
     clear: both;
@@ -151,7 +186,7 @@ a:link {
 }
 
 a:active {
-    color: #2B4261;
+    color: purple;
 }
 
 a:visited {
@@ -165,8 +200,13 @@ a:hover {
 
 .card {
     /* height: 600px; */
-    outline: lightgray;
+    outline: darkgray;
+}
 
+.card-body {
+    line-height: 1.6;
+    margin: 30px;
+    font-size: 16px;
 }
 
 .card border-dark mb-3 {
@@ -195,11 +235,11 @@ a:hover {
 
 /* Game Page */
 
-#headingOne  {
-    background-color: #F8270A; 
+#headingOne {
+    background-color: #F8270A;
 }
 
-#headingTwo  {
+#headingTwo {
     background-color: #FF4840;
 }
 
@@ -214,82 +254,121 @@ a:hover {
 #headingFive {
     background-color: #FF9E88;
 }
+
 #headingSix {
     background-color: #FE8421;
 }
+
 #headingSeven {
     background-color: #FFAA53;
 }
+
 #headingEight {
-    background-color: #FFC071;
+    background-color: #FAC74D
 }
+
 #headingNine {
     background-color: #FFBD70;
 }
+
 #headingTen {
     background-color: #FDBD76;
 }
+
 #headingEleven {
     background-color: #569443;
 }
+
 #headingTwelve {
     background-color: #56994C;
 }
+
 #headingThirteen {
     background-color: #689F5C;
 }
+
 #headingFourteen {
     background-color: #88AB6C;
 }
-#headingFifteen  {
+
+#headingFifteen {
     background-color: #AABC81;
 }
+
 #headingSixteen {
     background-color: #AABC81;
 }
+
 #headingSeventeen {
     background-color: #1A7DA7;
 }
+
 #headingEighteen {
     background-color: #468FB3;
 }
+
 #headingNineteen {
     background-color: #7DA4B4;
 }
+
 #headingTwenty {
     background-color: #A6B7B8;
 }
+
 #headingTwenty-One {
     background-color: #61235D;
 }
+
 #headingTwenty-Two {
     background-color: #722960;
 }
+
 #headingTwenty-Three {
     background-color: #8C3F6F;
 }
+
 #headingTwenty-Four {
     background-color: #A95877;
 }
+
 #headingTwenty-Five {
     background-color: #C07789;
 }
+
 #headingTwenty-Six {
     background-color: #F23250;
 }
-#headingTwenty-Seven  {
+
+#headingTwenty-Seven {
     background-color: #EB495E;
 }
+
 #headingTwenty-Eight {
     background-color: #F26570;
 }
 
-#headingTwenty-Nine  {
+#headingTwenty-Nine {
     background-color: #F47575;
-} 
+}
+
 #headingThirty {
     background-color: #F99287;
-} 
+}
+
+/* text boxes */
+
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+    text-align: center;
+}
+
+.shadow-textarea textarea.form-control {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+
 
 
 /* Footer */
@@ -302,164 +381,3 @@ a:hover {
 
 .social-icon {
     margin: 20px 10px;
-
-
-    /* responsive tag samples */
-
-    * {
-        box-sizing: border-box;
-    }
-
-
-    html {
-        height: 100%;
-        margin: 0;
-    }
-
-    body {
-        min-height: 100%;
-        font-family: 'Roboto';
-        margin: 0;
-        background-color: #fafafa;
-    }
-
-    .container {
-        margin:0 auto;
-        /* max-width: 960px; */
-        text-align: center;
-        background-color: lightslategray
-    }
-
-    .row-profile {
-        height: 
-    }
-
-    
-    label {
-        display: block;
-        padding: 20px 0 5px 0;
-    }
-
-    .tagsinput,
-    .tagsinput * {
-        box-sizing: border-box
-    }
-
-    .tagsinput {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        background: #fff;
-        font-family: sans-serif;
-        font-size: 14px;
-        line-height: 20px;
-        color: #556270;
-        padding: 5px 5px 0;
-        border: 1px solid #e6e6e6;
-        border-radius: 2px
-    }
-
-    .tagsinput.focus {
-        border-color: #ccc
-    }
-
-    .tagsinput .tag {
-        position: relative;
-        background: #556270;
-        display: block;
-        max-width: 100%;
-        word-wrap: break-word;
-        color: #fff;
-        padding: 5px 30px 5px 5px;
-        border-radius: 2px;
-        margin: 0 5px 5px 0
-    }
-
-    .tagsinput .tag .tag-remove {
-        position: absolute;
-        background: 0 0;
-        display: block;
-        width: 30px;
-        height: 30px;
-        top: 0;
-        right: 0;
-        cursor: pointer;
-        text-decoration: none;
-        text-align: center;
-        color: #ff6b6b;
-        line-height: 30px;
-        padding: 0;
-        border: 0
-    }
-
-    .tagsinput .tag .tag-remove:after,
-    .tagsinput .tag .tag-remove:before {
-        background: #ff6b6b;
-        position: absolute;
-        display: block;
-        width: 10px;
-        height: 2px;
-        top: 14px;
-        left: 10px;
-        content: ''
-    }
-
-    .tagsinput .tag .tag-remove:before {
-        -webkit-transform: rotateZ(45deg);
-        transform: rotateZ(45deg)
-    }
-
-    .tagsinput .tag .tag-remove:after {
-        -webkit-transform: rotateZ(-45deg);
-        transform: rotateZ(-45deg)
-    }
-
-    .tagsinput div {
-        -webkit-box-flex: 1;
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1
-    }
-
-    .tagsinput div input {
-        background: 0 0;
-        display: block;
-        width: 100%;
-        font-size: 14px;
-        line-height: 20px;
-        padding: 5px;
-        border: 0;
-        margin: 0 5px 5px 0
-    }
-
-    .tagsinput div input.error {
-        color: #ff6b6b
-    }
-
-    .tagsinput div input::-ms-clear {
-        display: none
-    }
-
-    .tagsinput div input::-webkit-input-placeholder {
-        color: #ccc;
-        opacity: 1
-    }
-
-    .tagsinput div input:-moz-placeholder {
-        color: #ccc;
-        opacity: 1
-    }
-
-    .tagsinput div input::-moz-placeholder {
-        color: #ccc;
-        opacity: 1
-    }
-
-    .tagsinput div input:-ms-input-placeholder {
-        color: #ccc;
-        opacity: 1
-    }
