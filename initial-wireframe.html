@@ -18,7 +18,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lustria&display=swap" rel="stylesheet">
 
-    <style>
+    <!-- <style>
         * {
             box-sizing: border-box;
         }
@@ -39,7 +39,7 @@
             display: block;
             padding: 20px 0 5px 0;
         }
-    </style>
+    </style> -->
 
     <link rel="stylesheet" href="main.css">
     <title>Attract It!</title>
@@ -48,7 +48,31 @@
 
 <body>
 
-    <!-- Landing Screen -->
+    <!-- Nav Bar ------------------>
+
+    <nav class="navbar navbar-light bg-light navbar-expand-lg fixed">
+        <a href="#" class="navbar-brand"></a>LOGO</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link">Let's start</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link">Play</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Landing Screen --------------->
+
     <div class="col-lg-12">
         <section id="landing-page" class="bg" style="display: none;"></section>>
         <div class="hero-container">
@@ -56,60 +80,60 @@
             <div class="landing-width">
                 <div class="landing-bg" id="landing-screen-text">
                     <h4>
-                        Like a magnet, you attract into your life what you focus on.
-                        <h4>
-                            This game allows you to set personal goals and increase the magnetism to it <br> by
-                            focusing on your thoughts, emotions, imagination, and actions.
-                        </h4>
+                        Like a magnet, you attract into your life what you focus on.<br>
+                        This game allows you to set personal goals and increase the magnetism to it <br> by
+                        focusing on your thoughts, emotions, imagination, and actions.
+                    </h4>
 
 
-                        <!-- Login/Signup -->
 
-                        <section class="login-container">
-                            <article class="half">
-                                <h1>Start Attracting Now!</h1>
-                                <div class="tabs">
-                                    <span class="tab signin active"><a href="#signin">Sign in</a></span>
-                                    <span class="tab signup"><a href="#signup">Sign up</a></span>
+                    <!-- Login/Signup -->
+
+                    <section class="login-container">
+                        <article class="half">
+                            <h1>Start Attracting Now!</h1>
+                            <div class="tabs">
+                                <span class="tab signin active"><a href="#signin">Sign in</a></span>
+                                <span class="tab signup"><a href="#signup">Sign up</a></span>
+                            </div>
+                            <div class="content">
+                                <div class="signin-cont cont">
+                                    <form action="#" method="post" enctype="multipart/form-data">
+                                        <input type="email" name="email" id="email" class="inpt" required="required"
+                                            placeholder="Your email">
+                                        <label for="email">Your email</label>
+                                        <input type="password" name="password" id="password" class="inpt"
+                                            required="required" placeholder="Your password">
+                                        <label for="password">Your password</label>
+                                        <input type="checkbox" id="remember" class="checkbox" checked>
+                                        <label for="remember">Remember me</label>
+                                        <div class="submit-wrap">
+                                            <input type="submit" value="Sign in" class="submit">
+                                            <a href="#" class="more">Forgot your password?</a>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="content">
-                                    <div class="signin-cont cont">
-                                        <form action="#" method="post" enctype="multipart/form-data">
-                                            <input type="email" name="email" id="email" class="inpt" required="required"
-                                                placeholder="Your email">
-                                            <label for="email">Your email</label>
-                                            <input type="password" name="password" id="password" class="inpt"
-                                                required="required" placeholder="Your password">
-                                            <label for="password">Your password</label>
-                                            <input type="checkbox" id="remember" class="checkbox" checked>
-                                            <label for="remember">Remember me</label>
-                                            <div class="submit-wrap">
-                                                <input type="submit" value="Sign in" class="submit">
-                                                <a href="#" class="more">Forgot your password?</a>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="signup-cont cont">
-                                        <form action="#" method="post" enctype="multipart/form-data">
-                                            <input type="name" name="name" id="name" class="inpt" required="required"
-                                                placeholder="Your name">
-                                            <label for="name">Your name</label>
-                                            <input type="email" name="email" id="email" class="inpt" required="required"
-                                                placeholder="Your email">
-                                            <label for="email">Your email</label>
-                                            <input type="password" name="password" id="password" class="inpt"
-                                                required="required" placeholder="Your password">
-                                            <label for="password">Your password</label>
-                                            <div class="submit-wrap">
-                                                <input type="submit" value="Sign up" class="submit">
-                                                <a href="#" class="more">Terms and conditions</a>
-                                            </div>
-                                        </form>
-                                    </div>
+                                <div class="signup-cont cont">
+                                    <form action="#" method="post" enctype="multipart/form-data">
+                                        <input type="name" name="name" id="name" class="inpt" required="required"
+                                            placeholder="Your name">
+                                        <label for="name">Your name</label>
+                                        <input type="email" name="email" id="email" class="inpt" required="required"
+                                            placeholder="Your email">
+                                        <label for="email">Your email</label>
+                                        <input type="password" name="password" id="password" class="inpt"
+                                            required="required" placeholder="Your password">
+                                        <label for="password">Your password</label>
+                                        <div class="submit-wrap">
+                                            <input type="submit" value="Sign up" class="submit">
+                                            <a href="#" class="more">Terms and conditions</a>
+                                        </div>
+                                    </form>
                                 </div>
-                            </article>
-                            <div class="half bg"></div>
-                        </section>
+                            </div>
+                        </article>
+                        <div class="half bg"></div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -125,16 +149,16 @@
             <div class="row-profile">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-sm-4 col-md-3">
                             <div class="profile-content">
-                                <h5>1.</h5>
+                                1.
                                 <p>You may wish to keep notes for steps 2 through 7 as you will write your final
                                     Goal and Feeling Statement in step 8.</p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-sm-4 col-md-3">
                             <div class="profile-content">
-                                <h5>2.</h5>
+                                2.
                                 <p>Consider: what do you want? What is your goal? If you could be granted one wish,
                                     what
                                     would
@@ -142,18 +166,18 @@
                                     ask for? </p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-sm-4 col-md-3">
                             <div class="profile-content">
-                                <h5>3.</h5>
+                                3.
                                 <p>Choose a single, clear and concrete personal goal you
-                                    believe is possible to attract. You can turn an affirmation into a goal or
+                                    believe is possible. You can turn an affirmation into a goal or
                                     take a situation in your life that you want changed and reverse it into a
                                     positively worded goal.</p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-sm-4 col-md-3">
                             <div class="profile-content">
-                                <h5>4.</h5>
+                                4.
                                 <p>How would you feel if you had already achieved your goal? This will be the
                                     feeling that you want your goal to give you during gameplay. Choose at least one
                                     feeling, but no
@@ -161,35 +185,35 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-sm-4 col-md-3">
                             <div class="profile-content">
-                                <h5>5.</h5>
+                                5.
                                 <p>Write a simple, two-sentence statement of what you want (Goal) and how you want
                                     to feel when you get it (Feeling). You will repeatedly read this Goal and
                                     Feeling Statement
                                     during gameplay.</p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-sm-4 col-md-3">
                             <div class="profile-content">
-                                <h5>6.</h5>
+                                6.
                                 <p>Use the present tense, as if your goal and feelings are already accomplished
                                     facts:
                                     <b>I am now/I now have...(Goal) I feel ...(Feelings).</b></p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-sm-4 col-md-3">
                             <div class="profile-content">
-                                <h5>7.</h5>
+                                7.
                                 <p>Perfect your Goal and Feeling Statement. Play with the wording until it clicks.
                                     Two sentences: one for the goal and one for the feeling the goal will give;
                                     word it in the present tense, positive and clear and concise.
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-sm-4 col-md-3">
                             <div class="profile-content">
-                                <h5>8.</h5>
+                                8.
                                 <p>Rewrite your final Goal and Feeling Statement clearly so it can be read easily.
                                 </p>
                             </div>
@@ -200,8 +224,10 @@
 
 
             <div class="form-group shadow-textarea">
-                <label for="FormControlTextarea4"><h4>Goal and Feeling Statement</h4></label>
-                <textarea class="form-control z-depth-1" id="FormControlTextarea4" rows="4"
+                <label for="FormControlTextarea4">
+                    <h3>Goal and Feeling Statement</h3>
+                </label>
+                <textarea class="form-control z-depth-1" id="FormControlTextarea4" rows="5"
                     placeholder="I am now... I now have... I feel..."></textarea>
             </div><br>
 
@@ -231,15 +257,18 @@
 
     <section id="play-game-page" class="container-fluid">
 
-        <h4>Let's Play!</h4>
+        <div class="game-title">Let's Play!</div>
 
         <div class="accordion" id="accordion">
             <div class="card">
+
+                <!-- Heading One ------------------->
+
                 <div class="card-header row" id="headingOne">
 
                     <h2 class="mb-0 col-md-6">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
+                            aria-expanded="false" aria-controls="collapseOne">
                             <p>1: Intention</p>
                         </button>
                     </h2>
@@ -247,7 +276,6 @@
                         <p><i class="fas fa-edit"></i></p>
                     </div>
                 </div>
-
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         We attract into our lives what we focus on. Our thoughts, feelings, actions and
@@ -258,17 +286,16 @@
                         For 30 seconds imagine a scene in your mind in which you have already achieved
                         your
                         goal. What will you hear, see and feel when it's reached?
-
-
                         <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6">Thoughts</label>
-                            <textarea class="form-control z-depth-1" id="FormControlTextarea6" rows="9"
-                                placeholder="Write something here..."></textarea>
+                            <label for="FormControlTextarea6"></label>
+                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                placeholder="Ponderings..."></textarea>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Heading Two ------------------->
             <div class="card">
                 <div class="card-header row" id="headingTwo">
 
@@ -300,6 +327,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Three ------------------->
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
@@ -319,7 +348,7 @@
                 </div>
             </div>
 
-
+            <!-- Heading Four ------------------->
             <div class="card">
                 <div class="card-header" id="headingFour">
                     <h2 class="mb-0">
@@ -342,6 +371,7 @@
                 </div>
             </div>
 
+            <!-- Heading Five ------------------->
             <div class="card">
                 <div class="card-header" id="headingFive">
                     <h2 class="mb-0">
@@ -383,6 +413,8 @@
                 </div>
             </div>
 
+            <!-- Heading Six ------------------->
+
             <div class="card">
                 <div class="card-header" id="headingSix">
                     <h2 class="mb-0">
@@ -413,6 +445,7 @@
                 </div>
             </div>
 
+            <!-- Heading Seven ------------------->
             <div class="card">
                 <div class="card-header" id="headingSeven">
                     <h2 class="mb-0">
@@ -443,6 +476,7 @@
                 </div>
             </div>
 
+            <!-- Heading Eight ------------------->
             <div class="card">
                 <div class="card-header" id="headingEight">
                     <h2 class="mb-0">
@@ -476,6 +510,7 @@
                 </div>
             </div>
 
+            <!-- Heading Nine ------------------->
             <div class="card">
                 <div class="card-header" id="headingNine">
                     <h2 class="mb-0">
@@ -512,6 +547,8 @@
                 </div>
             </div>
 
+            <!-- Heading Ten ------------------->
+
             <div class="card">
                 <div class="card-header" id="headingTen">
                     <h2 class="mb-0">
@@ -537,6 +574,8 @@
                 </div>
             </div>
 
+
+            <!-- Heading Eleven ------------------->
             <div class="card">
                 <div class="card-header" id="headingEleven">
                     <h2 class="mb-0">
@@ -567,10 +606,11 @@
                         to
                         act? Replay it, visualizing and emotionally experiencing it exactly the way you wanted it to
                         happen. Make it a positive outcome.
-
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Twelve ------------------->
 
             <div class="card">
                 <div class="card-header" id="headingTwelve">
@@ -607,6 +647,8 @@
                 </div>
             </div>
 
+            <!-- Heading Thirteen ------------------->
+
             <div class="card">
                 <div class="card-header" id="headingThirteen">
                     <h2 class="mb-0">
@@ -640,6 +682,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Fourteen ------------------->
 
             <div class="card">
                 <div class="card-header" id="headingFourteen">
@@ -676,6 +720,8 @@
                 </div>
             </div>
 
+            <!-- Heading Fifteen ------------------->
+
             <div class="card">
                 <div class="card-header" id="headingFifteen">
                     <h2 class="mb-0">
@@ -700,6 +746,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Sixteen ------------------->
             <div class="card">
                 <div class="card-header" id="headingSixteen">
                     <h2 class="mb-0">
@@ -723,6 +771,7 @@
                 </div>
             </div>
 
+            <!-- Heading Seventeen ------------------->
             <div class="card">
                 <div class="card-header" id="headingSeventeen">
                     <h2 class="mb-0">
@@ -755,6 +804,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Eighteen ------------------->
 
             <div class="card">
                 <div class="card-header" id="headingEighteen">
@@ -791,6 +842,8 @@
                 </div>
             </div>
 
+            <!-- Heading Nineteen ------------------->
+
             <div class="card">
                 <div class="card-header" id="headingNineteen">
                     <h2 class="mb-0">
@@ -817,6 +870,8 @@
                 </div>
             </div>
 
+            <!-- Heading Twenty ------------------->
+
             <div class="card">
                 <div class="card-header" id="headingTwenty">
                     <h2 class="mb-0">
@@ -841,6 +896,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Twenty-One ------------------->
 
             <div class="card">
                 <div class="card-header" id="headingTwenty-One">
@@ -872,6 +929,7 @@
                 </div>
             </div>
 
+            <!-- Heading Twenty-Two ------------------->
             <div class="card">
                 <div class="card-header" id="headingTwenty-Two">
                     <h2 class="mb-0">
@@ -901,6 +959,7 @@
                 </div>
             </div>
 
+            <!-- Heading Twenty-Three ------------------->
             <div class="card">
                 <div class="card-header" id="headingTwenty-Three">
                     <h2 class="mb-0">
@@ -930,6 +989,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Twenty-Four ------------------->
 
             <div class="card">
                 <div class="card-header" id="headingTwenty-Four">
@@ -963,6 +1024,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Twenty-Five ------------------->
 
             <div class="card">
                 <div class="card-header" id="headingTwenty-Five">
@@ -999,6 +1062,9 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Twneyt-Six ------------------->
+
             <div class="card">
                 <div class="card-header" id="headingTwenty-Six">
                     <h2 class="mb-0">
@@ -1027,6 +1093,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Twenty-Seven ------------------->
 
             <div class="card">
                 <div class="card-header" id="headingTwenty-Seven">
@@ -1063,6 +1131,8 @@
                 </div>
             </div>
 
+            <!-- Heading Twenty-Eight ------------------->
+
             <div class="card">
                 <div class="card-header" id="headingTwenty-Eight">
                     <h2 class="mb-0">
@@ -1090,6 +1160,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Heading Twenty-Nine ------------------->
 
             <div class="card">
                 <div class="card-header" id="headingTwenty-Nine">
@@ -1129,6 +1201,7 @@
                 </div>
             </div>
 
+            <!-- Heading Thirty ------------------->
             <div class="card">
                 <div class="card-header" id="headingThirty">
                     <h2 class="mb-0">
@@ -1163,6 +1236,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
