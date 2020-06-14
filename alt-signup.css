@@ -22,11 +22,11 @@ body .login-container {
     width: 400px;
     height: 500px;
     margin: auto; 
-    background-color: #ffffff;
-    opacity: .75;
-    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+    background-color: whitesmoke;
+    opacity: .95;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 40px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 40px;
 }
 
 body .login-container .half {
@@ -83,7 +83,8 @@ body .login-container .tabs .tab a {
 
 body .login-container .tabs .tab.active a,
 body .login-container .tabs .tab:hover a {
-    color: #263238;
+    /* color: #263238; */
+    color: black;
 }
 
 body .login-container .tabs .tab.active {
@@ -121,7 +122,8 @@ body .login-container .content .more:nth-of-type(3) {
 
 body .login-container .content label {
     font-size: 12px;
-    color: #263238;
+    /* color: #263238; */
+    color: black; 
     -moz-user-select: -moz-none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -139,8 +141,10 @@ body .login-container .content input.inpt {
     height: 42px;
     margin-bottom: 12px;
     padding: 16px 13px;
-    color: #999999;
-    border: 1px solid #d9d9d9;
+    /* color: #999999; */
+    color: darkslategrey;
+    /* border: 1px solid #d9d9d9; */
+    border: 1px solid #999999;
     background: transparent;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -149,30 +153,35 @@ body .login-container .content input.inpt {
 
 body .login-container .content input.inpt::-webkit-input-placeholder {
     font-size: 14px;
-    color: #999999;
+    /* color: #999999; */
+    color: darkslategrey;
     font-family: 'Lato', sans-serif;
 }
 
 body .login-container .content input.inpt:-moz-placeholder {
     font-size: 14px;
-    color: #999999;
+    color: darkslategrey
+    /* color: #999999; */
     font-family: 'Lato', sans-serif;
 }
 
 body .login-container .content input.inpt::-moz-placeholder {
     font-size: 14px;
-    color: #999999;
+    color: darkslategrey;
+    /* color: #999999; */
     font-family: 'Lato', sans-serif;
 }
 
 body .login-container .content input.inpt:-ms-input-placeholder {
     font-size: 14px;
-    color: #999999;
+    color: darkslategrey;
+    /* color: #999999; */
     font-family: 'Lato', sans-serif;
 }
 
 body .login-container .content input.inpt:focus {
-    border-color: #999999;
+    /* border-color: #999999; */
+    color: darkslategrey;
 }
 
 body .login-container .content input.submit {
@@ -227,7 +236,8 @@ body .login-container .content .checkbox+label {
 
 body .login-container .content .checkbox+label:before {
     content: "\A";
-    color: #999999;
+    color: darkslategrey;
+    /* color: #999999; */
     font-family: Verdana;
     font-weight: bold;
     font-size: 8px;
@@ -240,7 +250,8 @@ body .login-container .content .checkbox+label:before {
     -webkit-border-radius: 2px;
     border-radius: 2px;
     background: transparent;
-    border: 1px solid #d9d9d9;
+    /* border: 1px solid #d9d9d9; */
+    border: 1px solid darkslategrey;
     width: 11px;
     height: 11px;
     margin: -2px 8px 0 0;
@@ -262,7 +273,8 @@ body .login-container .content .submit-wrap a {
     margin-top: 20px;
     text-align: center;
     text-decoration: none;
-    color: #999999;
+    color: darkslategray;
+    /* color: #999999; */
  )
 
 
