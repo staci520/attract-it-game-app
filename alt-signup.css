@@ -19,14 +19,14 @@
 body .login-container {
     position: relative;
     overflow: hidden;
-    width: 400px;
+    width: 350px;
     height: 500px;
     margin: auto; 
-    background-color: whitesmoke;
-    opacity: .95;
-    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 40px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 40px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 40px;
+    background-color: #ffffff;
+    opacity: .75;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
 }
 
 body .login-container .half {
@@ -36,9 +36,9 @@ body .login-container .half {
     padding: 58px 40px 0;
 }
 
-body .login-container .half.bg {
+body .login-container .half.md {
     /* background-image: url("https://webdevtrick.com/wp-content/uploads/loginimg.jpg"); */
-    background-size: 400px;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 
@@ -83,8 +83,7 @@ body .login-container .tabs .tab a {
 
 body .login-container .tabs .tab.active a,
 body .login-container .tabs .tab:hover a {
-    /* color: #263238; */
-    color: black;
+    color: #263238;
 }
 
 body .login-container .tabs .tab.active {
@@ -122,8 +121,7 @@ body .login-container .content .more:nth-of-type(3) {
 
 body .login-container .content label {
     font-size: 12px;
-    /* color: #263238; */
-    color: black; 
+    color: #263238;
     -moz-user-select: -moz-none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -141,10 +139,8 @@ body .login-container .content input.inpt {
     height: 42px;
     margin-bottom: 12px;
     padding: 16px 13px;
-    /* color: #999999; */
-    color: darkslategrey;
-    /* border: 1px solid #d9d9d9; */
-    border: 1px solid #999999;
+    color: #999999;
+    border: 1px solid #d9d9d9;
     background: transparent;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -153,35 +149,30 @@ body .login-container .content input.inpt {
 
 body .login-container .content input.inpt::-webkit-input-placeholder {
     font-size: 14px;
-    /* color: #999999; */
-    color: darkslategrey;
+    color: #999999;
     font-family: 'Lato', sans-serif;
 }
 
 body .login-container .content input.inpt:-moz-placeholder {
     font-size: 14px;
-    color: darkslategrey
-    /* color: #999999; */
+    color: #999999;
     font-family: 'Lato', sans-serif;
 }
 
 body .login-container .content input.inpt::-moz-placeholder {
     font-size: 14px;
-    color: darkslategrey;
-    /* color: #999999; */
+    color: #999999;
     font-family: 'Lato', sans-serif;
 }
 
 body .login-container .content input.inpt:-ms-input-placeholder {
     font-size: 14px;
-    color: darkslategrey;
-    /* color: #999999; */
+    color: #999999;
     font-family: 'Lato', sans-serif;
 }
 
 body .login-container .content input.inpt:focus {
-    /* border-color: #999999; */
-    color: darkslategrey;
+    border-color: #999999;
 }
 
 body .login-container .content input.submit {
@@ -191,7 +182,7 @@ body .login-container .content input.submit {
     width: 100%;
     height: 42px;
     cursor: pointer;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #263238;
@@ -236,8 +227,7 @@ body .login-container .content .checkbox+label {
 
 body .login-container .content .checkbox+label:before {
     content: "\A";
-    color: darkslategrey;
-    /* color: #999999; */
+    color: #999999;
     font-family: Verdana;
     font-weight: bold;
     font-size: 8px;
@@ -250,8 +240,7 @@ body .login-container .content .checkbox+label:before {
     -webkit-border-radius: 2px;
     border-radius: 2px;
     background: transparent;
-    /* border: 1px solid #d9d9d9; */
-    border: 1px solid darkslategrey;
+    border: 1px solid #d9d9d9;
     width: 11px;
     height: 11px;
     margin: -2px 8px 0 0;
@@ -273,9 +262,8 @@ body .login-container .content .submit-wrap a {
     margin-top: 20px;
     text-align: center;
     text-decoration: none;
-    color: darkslategray;
-    /* color: #999999; */
- )
+    color: #999999;
+}
 
 
 body .login-container .content .submit-wrap a:hover {

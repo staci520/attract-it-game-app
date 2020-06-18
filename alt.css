@@ -45,7 +45,7 @@ h6 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-position: center bottom;
-    width: 85%;
+    width: 100%;
     height: 925px;
     background-size: cover;
     padding: 50px;
@@ -66,17 +66,14 @@ h6 {
 }
 
 #play-game-page {
-    margin: 25px, auto;
-    width: 85%;
+    margin: 0, auto 0;
+    width: 88%;
     padding: 35px;
-
 }
-
-
 
 h1 {
     font-family: "Lustria", serif;
-    font-size: 40px; 
+    font-size: 40px;
     color: black;
     padding: 15px;
     text-align: center;
@@ -90,7 +87,7 @@ h2 {
 
 
 h3 {
-    display: block;   
+    display: block;
     text-align: left;
     font-size: 23px;
     color: white;
@@ -98,13 +95,12 @@ h3 {
 }
 
 h4 {
-    text-align: center; 
-    padding: 35px;
-    font-size: 22px; 
+    text-align: center;
+    padding: 18px;
+    margin: 15px;
+    font-size: 22px;
     color: white;
-    /* font-weight: bold; */
     line-height: 1.9rem;
-    padding: 8px;
 }
 
 h5 {
@@ -120,19 +116,12 @@ h6 {
     line-height: 1.6rem;
     padding: 10px;
 }
-/* 
-.game-title {
-    font-size: 34px;
-    color: #4E4957;
-    text-align: center;
-    padding: 24px;
-} */
 
-.title-section  {
+
+.title-section {
     padding: 20px;
     margin-top: 20px;
     min-height: 750px
-
 }
 
 .button-container {
@@ -145,11 +134,11 @@ h6 {
     transform: rotate(-180deg);
     transition: .3s transform ease-in-out;
     display: inline-block;
-  }
-  
-  .collapse-arrow .collapsed .icon {
+}
+
+.collapse-arrow .collapsed .icon {
     transform: rotate(0deg);
-  }
+}
 
 
 .btn-link {
@@ -163,9 +152,8 @@ h6 {
 }
 
 .card-header {
-    padding: .5rem 1.0 rem;
-    margin-bottom: 9;
-    border-bottom: 2px solid #E8E8E8;
+    padding: .5rem 1.0rem;
+    margin-bottom: 1px;
 }
 
 .card-header p {
@@ -176,6 +164,15 @@ h6 {
 .complete-status {
     text-align: right;
     padding-top: 9px;
+}
+
+.card-text {
+    padding-bottom: 15px;
+    /* letter-spacing: 0.02em; */
+}
+
+.bold {
+    font-weight: bold;
 }
 
 
@@ -190,8 +187,8 @@ h6 {
     font-size: 2.5rem;
     font-weight: bold;
   } */
-  
-  /* .nav-bar-item {
+
+/* .nav-bar-item {
     padding: 0 18px;
     font-weight: bold;
     font-size: 22px;
@@ -220,14 +217,13 @@ a:hover {
 
 
 .card {
-    /* height: 600px; */
     outline: darkgray;
 }
 
 .card-body {
-    line-height: 1.6rem;
+    line-height: 1.7rem;
     margin: 30px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .card border-dark mb-3 {
@@ -242,8 +238,8 @@ a:hover {
     text-align: center;
 }
 
-.get-started-title-1  {
-    
+.get-started-title-1 {
+
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -252,37 +248,39 @@ a:hover {
 
 }
 
-
-
-.get-started-title-2  {   
+.get-started-title-2 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
     background-color: #F5C174;
     padding: 1rem;
 }
-.get-started-title-3  {
+
+.get-started-title-3 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
     background-color: #56994C;
     padding: 1rem;
 }
-.get-started-title-4  {  
+
+.get-started-title-4 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
     background-color: #1A7DA7;
     padding: 1rem;
 }
-.get-started-title-5  {    
+
+.get-started-title-5 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
     background-color: #A95877;
     padding: 1rem;
 }
-.get-started-title-6  {
+
+.get-started-title-6 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -293,6 +291,15 @@ a:hover {
 
 .profile-content {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Dashboard  */
+
+#progress {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    position: relative;
 }
 
 /* Profile Content */
@@ -316,12 +323,12 @@ a:hover {
     top: 10px;
     transform: rotate(180deg);
     transition: all 0.5s;
-  }
-  
+}
+
 .accordion .card-header.active a:before {
     transform: rotate(0deg);
     transition: all 0.5s;
-  }
+}
 
 #headingOne {
     background-color: #F8270A;
@@ -452,7 +459,7 @@ a:hover {
 
 .shadow-textarea textarea.form-control {
     margin: auto;
-    width: 50%;
+    width: 60%;
     text-align: center;
 }
 

@@ -182,7 +182,7 @@ body .login-container .content input.submit {
     width: 100%;
     height: 42px;
     cursor: pointer;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #263238;
@@ -263,7 +263,7 @@ body .login-container .content .submit-wrap a {
     text-align: center;
     text-decoration: none;
     color: #999999;
- )
+}
 
 
 body .login-container .content .submit-wrap a:hover {
