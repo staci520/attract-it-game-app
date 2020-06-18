@@ -19,7 +19,7 @@
 body .login-container {
     position: relative;
     overflow: hidden;
-    width: 350px;
+    /* width: 400px; */
     height: 500px;
     margin: auto; 
     background-color: #ffffff;
@@ -31,15 +31,14 @@ body .login-container {
 
 body .login-container .half {
     float: left;
-    width: 100%;
+    width: 80%;
     height: 100%;
     padding: 58px 40px 0;
 }
 
-body .login-container .half.md {
-    /* background-image: url("https://webdevtrick.com/wp-content/uploads/loginimg.jpg"); */
+body .login-container .half {
+   
     background-size: 100%;
-    background-repeat: no-repeat;
 }
 
 body .login-container h1 {
@@ -300,4 +299,19 @@ body .login-container .content .signup-cont {
         opacity: 1;
         margin-left: 0px;
     }
+}
+
+/* Responsive */
+
+body .login-container {
+    position: relative;
+    overflow: hidden;
+    /* width: 400px;
+    height: 500px; */
+    margin: auto; 
+    background-color: #ffffff;
+    opacity: .75;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
 }
