@@ -29,7 +29,7 @@ h4,
 h5,
 h6 {
     font-family: 'Lustria', serif;
-    line-height: 1.6rem;
+    text-align: center;
 }
 
 
@@ -40,7 +40,7 @@ h6 {
 /* Heading */
 
 .hero-container {
-    background: url("images/Test-image.png") no-repeat center center;
+    background: url("images/night-photograph.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -49,95 +49,90 @@ h6 {
     height: 925px;
     background-size: cover;
     padding: 50px;
+    filter: grayscale(85%);
+    
 }
 
-/* img {
+img {
     filter: grayscale(100%);
-  } */
+  }
 
-/* .container {
+.container {
     width: 100%;
     padding: 5%;
+    background-color: #4E4957;
     margin-bottom: 50px;
-} */
+}
 
 .container-fluid {
     margin-bottom: 25px;
 }
 
 #play-game-page {
-    margin: 0, auto 0;
-    width: 88%;
-    padding: 35px;
+    margin: 50px, auto;
+    width: 100%;
+    padding: 50px;
+
 }
+
+
 
 h1 {
     font-family: "Lustria", serif;
-    font-size: 40px;
-    color: black;
-    padding: 15px;
     text-align: center;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    ;
 }
 
 h2 {
     color: white;
-    font-size: 24px;
+    text-align: left;
+    font-size: 28px;
+    font-family: 'Lustria', serif;
+    line-height: 1.8rem;
 }
-
-
 
 h3 {
     display: block;
+    width: 100%;
     text-align: left;
-    font-size: 23px;
+    font-size: 22px;
+    font-family: 'Lustria', serif;
     color: white;
-    margin: 5px;
+    line-height: 1.6rem;
+    margin: 10px;
 }
 
 h4 {
     text-align: center;
-    padding: 18px;
-    margin: 15px;
-    font-size: 22px;
+    padding: 35px;
+    font-size: 20px;
+    font-family: 'Lustria', serif;
     color: white;
+    font-weight: bold;
     line-height: 1.9rem;
 }
 
 h5 {
     text-align: center;
-    font-size: 22px;
-    padding: 8px;
-    color: black;
+    font-weight: bold;
+    font-family: 'Lustria', serif;
+    padding: 20px;
 }
 
 h6 {
     color: white;
     text-align: center;
-    line-height: 1.6rem;
-    padding: 10px;
 }
 
-
-.title-section {
-    padding: 20px;
-    margin-top: 20px;
-    min-height: 750px
-}
-
-.button-container {
+.game-title {
+    font-size: 28px;
+    color: #4E4957;
+    font-weight: bold;
     text-align: center;
-}
-
-/* Collapse Arrow */
-
-.collapse-arrow .icon {
-    transform: rotate(-180deg);
-    transition: .3s transform ease-in-out;
-    display: inline-block;
-}
-
-.collapse-arrow .collapsed .icon {
-    transform: rotate(0deg);
+    padding: 20px;
 }
 
 
@@ -148,12 +143,13 @@ h6 {
 }
 
 .card {
-    background-color: whitesmoke;
+    background-color: 	#E8E8E8;
 }
 
 .card-header {
-    padding: .5rem 1.0rem;
-    margin-bottom: 1px;
+    padding: .5rem 1.0 rem;
+    margin-bottom: 9;
+    border-bottom: 2px solid whitesmoke;
 }
 
 .card-header p {
@@ -166,19 +162,10 @@ h6 {
     padding-top: 9px;
 }
 
-.card-text {
-    padding-bottom: 15px;
-    /* letter-spacing: 0.02em; */
-}
-
-.bold {
-    font-weight: bold;
-}
-
 
 /* Navigation Bar */
-
-/* .navbar {
+/* 
+.navbar {
     padding: 0 0 4.5rem;
   }
   
@@ -186,22 +173,36 @@ h6 {
     font-family: 'Lustria', serif;
     font-size: 2.5rem;
     font-weight: bold;
-  } */
-
-/* .nav-bar-item {
+  }
+  
+  .nav-item {
     padding: 0 18px;
-    font-weight: bold;
-    font-size: 22px;
   }
-  */
-
-
-  .dashboard-img  {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 20px;
+  
+  .nav-link {
+    font-size: 1.2rem;
+    font-family: 'Lustria', serif;
   }
+   */
+
+/* .nav-bar {
+    clear: both;
+    overflow: auto;
+    background-color: #EBEDF3;
+}
+
+.nav-logo img {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    float: right;
+} */
 
 a:link {
     text-decoration: none;
@@ -223,13 +224,14 @@ a:hover {
 
 
 .card {
+    /* height: 600px; */
     outline: darkgray;
 }
 
 .card-body {
-    line-height: 1.7rem;
+    line-height: 1.6rem;
     margin: 30px;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .card border-dark mb-3 {
@@ -239,96 +241,28 @@ a:hover {
 /* Getting Started Page */
 
 #get-started-page {
-    background-color: #004268;
+    background-color:#4E4957;
     padding: 5%;
     text-align: center;
 }
-
-.get-started-title-1 {
-
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    background-color: #FF4840;
-    padding: 1rem;
-
-}
-
-.get-started-title-2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    background-color: #F5C174;
-    padding: 1rem;
-}
-
-.get-started-title-3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    background-color: #56994C;
-    padding: 1rem;
-}
-
-.get-started-title-4 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    background-color: #1A7DA7;
-    padding: 1rem;
-}
-
-.get-started-title-5 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    background-color: #A95877;
-    padding: 1rem;
-}
-
-.get-started-title-6 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    background-color: #F99287;
-    padding: 1rem;
-}
-
 
 .profile-content {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Dashboard  */
-
-#progress {
-    margin: 20px;
-    width: 200px;
-    height: 200px;
-    position: relative;
-}
-
 /* Profile Content */
 .profile-content {
-    padding: 18px;
+    padding: 20px;
     background: whitesmoke;
-    min-height: 150px;
+    min-height: 205px;
     margin-bottom: 30px;
-    height: 300px;
+    height: 350px;
     text-align: left;
-    line-height: 1.6rem;
 }
 
 /* Game Page */
 
-#play-game-page {
-    background-color: #004268;
-    padding: 5%;
-    /* text-align: center; */
-    width: 100%;
-}
-
-.accordion .card-header a:before {
+/* .accordion .card-header a:before {
     content: '\e316';
     font-size: 24px;
     position: absolute;
@@ -336,12 +270,12 @@ a:hover {
     top: 10px;
     transform: rotate(180deg);
     transition: all 0.5s;
-}
-
+  }
+  
 .accordion .card-header.active a:before {
     transform: rotate(0deg);
     transition: all 0.5s;
-}
+  } */
 
 #headingOne {
     background-color: #F8270A;
@@ -380,7 +314,7 @@ a:hover {
 }
 
 #headingTen {
-    background-color: #EECFA4;
+    background-color: #EDDBC4;
 }
 
 #headingEleven {
@@ -472,7 +406,7 @@ a:hover {
 
 .shadow-textarea textarea.form-control {
     margin: auto;
-    width: 60%;
+    width: 50%;
     text-align: center;
 }
 
