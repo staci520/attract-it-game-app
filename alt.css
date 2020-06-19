@@ -321,6 +321,13 @@ a:hover {
 
 /* Game Page */
 
+#play-game-page {
+    background-color: #004268;
+    padding: 5%;
+    /* text-align: center; */
+    width: 100%;
+}
+
 .accordion .card-header a:before {
     content: '\e316';
     font-size: 24px;
