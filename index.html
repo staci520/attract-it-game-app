@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="jquery.tagsinput-revisited.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="signup.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lustria&display=swap" rel="stylesheet">
@@ -24,7 +23,7 @@
 
     <nav class="navbar navbar-light navbar-expand-lg fixed">
         <a href="navbar-brand">
-        <img src="images/logo.jpg" height="80" alt="">
+            <img src="images/logo.jpg" height="80" alt="">
         </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -38,6 +37,9 @@
                     <a href="#Start" class="nav-link">Let's Start</a>
                 </li>
                 <li class="navbar-item">
+                    <a href="#Dashboard" class="nav-link">Dashboard</a>
+                </li>
+                <li class="navbar-item">
                     <a href="#Play" class="nav-link">Let's Play</a>
                 </li>
             </ul>
@@ -45,7 +47,7 @@
     </nav>
 
 
-    <section class="title-section" id="title">
+    <section id="home-section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
@@ -69,12 +71,12 @@
                                 </div>
                                 <div class="content">
                                     <div class="signin-cont cont">
-                                        <form action="#" method="post" enctype="multipart/form-data">
+                                        <form class="login-form">
                                             <input type="email" name="email" id="email" class="inpt" required="required"
-                                                placeholder="Your email">
+                                                placeholder="Your email" value="a@a.com">
                                             <label for="email">Your email</label>
                                             <input type="password" name="password" id="password" class="inpt"
-                                                required="required" placeholder="Your password">
+                                                required="required" placeholder="Your password" value="1234">
                                             <label for="password">Your password</label>
                                             <input type="checkbox" id="remember" class="checkbox" checked>
                                             <label for="remember">Remember me</label>
@@ -85,15 +87,15 @@
                                         </form>
                                     </div>
                                     <div class="signup-cont cont">
-                                        <form action="#" method="post" enctype="multipart/form-data">
+                                        <form class="register-form">
                                             <input type="name" name="name" id="name" class="inpt" required="required"
-                                                placeholder="Your name">
+                                                placeholder="Your name" value="John Doe">
                                             <label for="name">Your name</label>
                                             <input type="email" name="email" id="email" class="inpt" required="required"
-                                                placeholder="Your email">
+                                                placeholder="Your email" value="a@a.com">
                                             <label for="email">Your email</label>
                                             <input type="password" name="password" id="password" class="inpt"
-                                                required="required" placeholder="Your password">
+                                                required="required" placeholder="Your password" value="1234">
                                             <label for="password">Your password</label>
                                             <div class="submit-wrap">
                                                 <input type="submit" value="Sign up" class="submit">
@@ -110,14 +112,16 @@
         </div>
     </section>
 
-     <!-- Get Started Page -->
+    <!-- Get Started Page -->
 
     <section id="get-started-page" class="container-fluid">
         <a id="Start"></a>
         <h4 class="display-4">Let's Start</h4>
 
         <div class="col-lg-12">
-            <h4>Set a personal goal and increase your magnetism to it by focusing your thoughts, emotions, imagination and actions. The Goal and Feeling Statement is a simple, two-sentence statement of what you want and how you want to feel when you get it.</h4>
+            <h4>Set a personal goal and increase your magnetism to it by focusing your thoughts, emotions, imagination
+                and actions. The Goal and Feeling Statement is a simple, two-sentence statement of what you want and how
+                you want to feel when you get it.</h4>
             <div class="row-profile">
                 <div class="col-md-12">
                     <div class="row">
@@ -128,6 +132,7 @@
                                 <div class="get-started-title-1">Step 1
 
                                 </div>
+                                
                                 <p>Consider: what do you want? What is your goal? If you could be
                                     granted one
                                     wish,
@@ -203,18 +208,19 @@
                 </div>
             </div>
 
+            <form class="goal-statement-form">
+                <div class="form-group shadow-textarea">
+                    <label for="FormControlTextarea4">
+                        <h4>Goal and Feeling Statement</h4>
+                    </label>
+                    <textarea class="form-control z-depth-1" id="FormControlTextarea4" rows="5"
+                        placeholder="I am now... I now have... I feel..."></textarea>
+                </div>
 
-            <div class="form-group shadow-textarea">
-                <label for="FormControlTextarea4">
-                    <h4>Goal and Feeling Statement</h4>
-                </label>
-                <textarea class="form-control z-depth-1" id="FormControlTextarea4" rows="5"
-                    placeholder="I am now... I now have... I feel..."></textarea>
-            </div>
-
-            <div class="button-container">
-                <input type="button" class="btn btn-info" value="Save">
-            </div>
+                <div class="button-container">
+                    <input type="submit" class="btn btn-info" value="Save">
+                </div>
+            </form>
 
 
             <!-- 
@@ -243,10 +249,10 @@
 
     <!-- Dashboard ------------------>
 
-    <section id="dashboard" class="container-fluid">
+    <section id="dashboard-section" class="container-fluid">
         <a id="Dashboard"></a>
-        <h4 class="display-4">Dashboard</h4>
-        
+        <h5 class="display-4">Dashboard</h5>
+
         <div class="row">
 
             <div class="col-md-6">
@@ -257,7 +263,7 @@
 
                 <h5 class="Badges">
                     Badges
-                    
+
                 </h5>
                 <img src="images/badge.png" class="dashboard-img" alt="creativity">
             </div>
@@ -267,7 +273,7 @@
                 <h5 class="Insights">
                     Insights
                 </h5>
-                   
+
                 <img src="images/Latest Insights.png" class="dashboard-img" height="350" alt="dashboard">
 
 
@@ -280,17 +286,19 @@
     <!-- Play Game ---------------------------->
 
 
-    <section id="play-game-page" class="container-fluid">
-         <a id="Play"></a>
+    <section id="play-game-section" class="container-fluid">
+        <a id="Play"></a>
         <h4 class="display-4">Let's Play</h4>
-        <h4>Set a personal goal and increase your magnetism to it by focusing your thoughts, emotions, imagination and actions. The Goal and Feeling Statement is a simple, two-sentence statement of what you want and how you want to feel when you get it.</h4>
+        <h4>Set a personal goal and increase your magnetism to it by focusing your thoughts, emotions, imagination and
+            actions. The Goal and Feeling Statement is a simple, two-sentence statement of what you want and how you
+            want to feel when you get it.</h4>
 
         <div class="accordion" id="accordion">
             <div class="card">
 
                 <!-- Heading One ------------------->
 
-                <div class="card bg-light">
+                <div class="card">
                     <div class="card-header row" id="headingOne">
 
                         <div class="mb-0 col-sm-3 col-md-6">
@@ -322,21 +330,23 @@
                                 your
                                 goal. What will you hear, see and feel when it's reached?</p>
 
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
 
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
                         </div>
+                        </form>
                     </div>
                 </div>
 
                 <!-- Heading Two ------------------->
-                <div class="card">
+                <div class="card bg-light">
                     <div class="card-header row" id="headingTwo">
 
                         <div class="mb-0 col-md-6">
@@ -359,14 +369,17 @@
                             time
                             when
                             you received help from someone and felt supported.
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -403,7 +416,7 @@
                             <p class="card-text">Ask yourself:</p>
 
                             <p class="card-text"><span class="bold">How can I experience these feelings right now
-                                    before reaching my goal?</span>p
+                                    before reaching my goal?</span>
 
                                 <p class="card-text"><span class="bold">What is the essence I am looking to
                                         experience?</span></p>
@@ -412,14 +425,18 @@
                                         could give me the very same feelings that I want my goal to give me -- right
                                         now?</span></p>
 
-                                <div class="form-group shadow-textarea">
-                                    <label for="FormControlTextarea6"></label>
-                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                        placeholder="Ponderings..."></textarea>
-                                </div>
-                                <div class="button-container">
-                                    <input type="button" class="btn btn-info" value="Add Session">
-                                </div>
+                                <form class="game-form">
+                                    <div class="form-group shadow-textarea">
+                                        <label for="FormControlTextarea6"></label>
+                                        <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                            placeholder="Ponderings..."></textarea>
+                                    </div>
+                                    <div class="button-container">
+                                        <input type="submit" class="btn btn-info" value="Add Session">
+                                    </div>
+                                </form>
+
+
                         </div>
                     </div>
                 </div>
@@ -458,14 +475,18 @@
                                 you.
                                 It’s
                                 as easy as breathing. Begin now.</p>
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -540,14 +561,16 @@
                                 does that make you
                                 feel?</p>
 
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -592,15 +615,16 @@
                                 .</p>
                             <p class="card-text">3. If I had <span class="bold"> no fear</span>, I would . . .</p>
 
-
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -650,15 +674,16 @@
                                 Statements”
                                 aloud and record your responses.</p>
 
-
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -710,14 +735,16 @@
                                 you
                                 have learned or helpful advice you’ve picked up.</p>
 
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -773,14 +800,17 @@
                                     emotional pain.</p>
 
                                 Now send this energy out into the world to all those in need of healing.
-                                <div class="form-group shadow-textarea">
-                                    <label for="FormControlTextarea6"></label>
-                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                        placeholder="Ponderings..."></textarea>
-                                </div>
-                                <div class="button-container">
-                                    <input type="button" class="btn btn-info" value="Add Session">
-                                </div>
+
+                                <form class="game-form">
+                                    <div class="form-group shadow-textarea">
+                                        <label for="FormControlTextarea6"></label>
+                                        <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                            placeholder="Ponderings..."></textarea>
+                                    </div>
+                                    <div class="button-container">
+                                        <input type="submit" class="btn btn-info" value="Add Session">
+                                    </div>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -822,14 +852,17 @@
                                 you
                                 feel
                                 good in body, mind and emotions.</p>
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -896,14 +929,17 @@
                                 wanted
                                 it to
                                 happen. Make it a positive outcome.</p>
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -972,14 +1008,17 @@
                                 by, <span class="bold">“This is
                                     normal for me.”</span> You can repeat this a few times to let it sink in
                                 deeply.</p>
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1046,14 +1085,16 @@
                                 Review new
                                 steps that you could take. See this as a positive process.</p>
 
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1124,14 +1165,16 @@
                                 <p class="card-text">Record in detail the dream and close with <span class="bold">and
                                         when I woke up from my dream, I felt. . .!”</span></p>
 
-                                <div class="form-group shadow-textarea">
-                                    <label for="FormControlTextarea6"></label>
-                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                        placeholder="Ponderings..."></textarea>
-                                </div>
-                                <div class="button-container">
-                                    <input type="button" class="btn btn-info" value="Add Session">
-                                </div>
+                                <form class="game-form">
+                                    <div class="form-group shadow-textarea">
+                                        <label for="FormControlTextarea6"></label>
+                                        <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                            placeholder="Ponderings..."></textarea>
+                                    </div>
+                                    <div class="button-container">
+                                        <input type="submit" class="btn btn-info" value="Add Session">
+                                    </div>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -1185,14 +1228,16 @@
                                     (Goal) and I feel
                                     (Feeling)!”</span></p>
 
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1241,14 +1286,16 @@
                                     tell
                                     you what happened. It all started when . . .”</span></p>
 
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1312,14 +1359,16 @@
                                     / I now
                                     have (Goal) and I feel … (Feeling).”</span></p>
 
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1391,14 +1440,17 @@
                                 universe,
                                 on every
                                 level of your being. How does this feel?</p>
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1455,14 +1507,17 @@
                                 ring
                                 your goal into manifestation. Record these and then do
                                 them.</p>
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1526,14 +1581,17 @@
                                 opening phase: “It was so easy for me to (Goal)! What
                                 happened was .
                                 . .”</p>
-                            <div class="form-group shadow-textarea">
-                                <label for="FormControlTextarea6"></label>
-                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                    placeholder="Ponderings..."></textarea>
-                            </div>
-                            <div class="button-container">
-                                <input type="button" class="btn btn-info" value="Add Session">
-                            </div>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1590,721 +1648,743 @@
                                     for attracting it!”</span></p>
 
                             <p class="card-text">Express gratitude for your goal and feeling aloud as if
-                                it’s already
-                                a fact: <span class="bold“>" I am so grateful that I now have ... I now am (Goal) and I
-                                    feel (Feeling) . . . and I thank myself for attracting it!”</span> </p> <div
-                                    class="form-group shadow-textarea">
+                                it’s already a fact: <span class="bold“>" I am so grateful that I now have ... I now am
+                                    (Goal) and I feel (Feeling) . . . and I thank myself for attracting it!”</span> </p>
+                                    <form class="game-form">
+                                    <div class="form-group shadow-textarea">
+                                        <label for="FormControlTextarea6"></label>
+                                        <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                            placeholder="Ponderings..."></textarea>
+                                    </div>
+                                    <div class="button-container">
+                                        <input type="submit" class="btn btn-info" value="Add Session">
+                                    </div>
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heading Twenty-Two ------------------->
+
+                <div class="card">
+                    <div class="card-header row" id="headingTwenty-Two">
+
+                        <div class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseTwenty-Two" aria-expanded="false"
+                                aria-controls="collapseTwenty-Two">
+                                <h3>22: Love</h3>
+                            </button>
+                        </div>
+
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
+                        </div>
+                    </div>
+
+                    <div id="collapseTwenty-Two" class="collapse" aria-labelledby="headingTwenty-Two"
+                        data-parent="#accordion">
+                        <div class="card-body">
+
+                            <p class="card-text">Love is an attitude of receptivity to a universe of good
+                                within you,
+                                and all
+                                around you.
+                                An
+                                ocean of invisible love washes over all of your
+                                experience. You
+                                exist within
+                                this ocean
+                                of
+                                love, even if it appears separate from you.</p>
+
+                            <p class="card-text">Close your eyes. Take a deep breath in, then slowly let
+                                it out.
+                                Relax . . .</p>
+
+                            <p class="card-text">Fully extend both arms out to your sides, palms open and
+                                facing
+                                upward in a
+                                receiving
+                                position.</p>
+
+                            <p class="card-text">For 30 seconds, imagine floating in an ocean of
+                                unlimited love,
+                                support, and
+                                acceptance
+                                from
+                                everyone and everything, everywhere in the universe.</p>
+
+                            <p class="card-text">Lower your arms. For 10 seconds, mentally send love to
+                                your body,
+                                mind and
+                                emotions.</p>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
                                     <label for="FormControlTextarea6"></label>
                                     <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
                                         placeholder="Ponderings..."></textarea>
-                        </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Heading Twenty-Two ------------------->
+                <!-- Heading Twenty-Three ------------------->
 
-            <div class="card">
-                <div class="card-header row" id="headingTwenty-Two">
+                <div class="card">
+                    <div class="card-header row" id="headingTwenty-Three">
 
-                    <div class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwenty-Two" aria-expanded="false" aria-controls="collapseTwenty-Two">
-                            <h3>22: Love</h3>
-                        </button>
+                        <div class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseTwenty-Three" aria-expanded="false"
+                                aria-controls="collapseTwenty-Three">
+                                <h3>23: Solution</h3>
+                            </button>
+                        </div>
+
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
+                        </div>
                     </div>
 
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
+                    <div id="collapseTwenty-Three" class="collapse" aria-labelledby="headingTwenty-Three"
+                        data-parent="#accordion">
+                        <div class="card-body">
+
+                            <p class="card-text">Every challenge contains a solution. Problems are just
+                                situations
+                                waiting to be
+                                transformed.
+                                This can be easy. Be open to inspiration. Be creative.
+                                Be willing to
+                                look both
+                                within
+                                and
+                                outside the box.</p>
+
+                            <p class="card-text">Identify one issue you are currently facing. It can be
+                                related to
+                                your goal, or
+                                something
+                                else. Think of how it could be resolved. Come up with
+                                and record two
+                                solutions.</p>
+
+                            <p class="card-text">Close your eyes. Imagine a locked door in front of you.
+                                As you
+                                gently touch it,
+                                the door
+                                opens up fully and a beautiful, clear light surrounds
+                                you, bathing
+                                you in the
+                                energy of
+                                clarity on all levels. Every area of your life, every
+                                relationship
+                                and situation
+                                is now
+                                working perfectly for you. Anything standing between you
+                                and your
+                                goal is
+                                dissolved. You
+                                are
+                                free and clear to have everything in your life working
+                                perfectly for
+                                you.</p>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
-                <div id="collapseTwenty-Two" class="collapse" aria-labelledby="headingTwenty-Two"
-                    data-parent="#accordion">
-                    <div class="card-body">
+                <!-- Heading Twenty-Four ------------------->
 
-                        <p class="card-text">Love is an attitude of receptivity to a universe of good
-                            within you,
-                            and all
-                            around you.
-                            An
-                            ocean of invisible love washes over all of your
-                            experience. You
-                            exist within
-                            this ocean
-                            of
-                            love, even if it appears separate from you.</p>
+                <div class="card">
+                    <div class="card-header row" id="headingTwenty-Four">
 
-                        <p class="card-text">Close your eyes. Take a deep breath in, then slowly let
-                            it out.
-                            Relax . . .</p>
+                        <div class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseTwenty-Four" aria-expanded="false"
+                                aria-controls="collapseTwenty-Four">
+                                <h3>24: Greater</h3>
+                            </button>
+                        </div>
 
-                        <p class="card-text">Fully extend both arms out to your sides, palms open and
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
+                        </div>
+                    </div>
+
+                    <div id="collapseTwenty-Four" class="collapse" aria-labelledby="headingTwenty-Four"
+                        data-parent="#accordion">
+                        <div class="card-body">
+
+                            <p class="card-text">Life grows, expands and expresses more and more of
+                                itself and its
+                                potential.
+                                Seeds
+                                produce
+                                plants, mental ideas take on physical form. You are here
+                                to grow and
+                                express
+                                greater and
+                                greater potential.</p>
+
+                            <p class="card-text">Think of a time when you happily received much more than
+                                you
+                                expected you would.
+                                What if
+                                there were absolutely no limits to what you could ask
+                                for? How might
+                                that change
+                                your
+                                goal?
+                                Can you ask for something even greater and expand your
+                                goal or
+                                improve it in
+                                some way?</p>
+
+                            <p class="card-text">Rewrite it and make it greater. This might be as simple
+                                as adding
+                                one more
+                                feeling or
+                                item
+                                to your Goal and Feeling Statement or changing the
+                                wording in some
+                                other way.
+                                Try on
+                                your
+                                greater goal and see how it feels.</p>
+
+                            <p class="card-text">Now, ask for even more by restating your new, greater
+                                Goal and
+                                Feeling Statement
+                                aloud.</p>
+
+                            <p class="card-text">Use this new, greater Goal and Feeling Statement going
+                                forward.</p>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heading Twenty-Five ------------------->
+
+                <div class="card">
+                    <div class="card-header row" id="headingTwenty-Five">
+
+                        <div class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseTwenty-Five" aria-expanded="false"
+                                aria-controls="collapseTwenty-Five">
+                                <h3>25: Deserve</h3>
+                            </button>
+                        </div>
+
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
+                        </div>
+                    </div>
+
+                    <div id="collapseTwenty-Five" class="collapse" aria-labelledby="headingTwenty-Five"
+                        data-parent="#accordion">
+                        <div class="card-body">
+
+                            <p class="card-text">The universe wants to continually bless and uplift you.
+                                You deserve
+                                to thrive.
+                                As you
+                                accept
+                                that you do deserve, you can step into greater levels of
+                                happiness
+                                and
+                                expression.</p>
+
+                            <p class="card-text">Share with the other players one thing that you already
+                                have (an
+                                object,
+                                perform,
+                                experience) in your life that you feel you deserve: <span class="bold">"I
+                                    am / I have …
+                                    and I
+                                    deserve it!”</span>“</p>
+
+                            <p class="card-text">Think of a person who has something that you want. This
+                                may or may
+                                not be
+                                related to
+                                your
+                                goal.</p>
+
+                            <p class="card-text"></p>Know that this person is not any better, worthy, or more
+                            deserving
+                            than you in
+                            any way.
+                            They
+                            are just willing to allow themselves to have good in
+                            that area of
+                            their life.
+                            You can do
+                            the
+                            same.</p>
+
+                            <p class="card-text">Close your eyes. For 30 seconds, imagine that you now
+                                have the same
+                                thing as
+                                this other
+                                person. When you’re ready, open your eyes and record
+                                what this feels
+                                like.</p>
+
+                            <p class="card-text"></p>State your Goal and Feeling Statement aloud as if it’s
+                            already a
+                            fact, adding
+                            enthusiastically at the end: “. . . <span class="bold">and I deserve it!”</span></p>
+
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heading Twenty-Six ------------------->
+
+                <div class="card">
+                    <div class="card-header row" id="headingTwenty-Six">
+
+                        <div class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseTwenty-Six" aria-expanded="false"
+                                aria-controls="collapseTwenty-Six">
+                                <h3>26: Jackpot</h3>
+                            </button>
+                        </div>
+
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
+                        </div>
+                    </div>
+
+                    <div id="collapseTwenty-Six" class="collapse" aria-labelledby="headingTwenty-Six"
+                        data-parent="#accordion">
+                        <div class="card-body">
+
+                            <p class="card-text">The universe is a place of limitless abundance. What you
+                                believe is
+                                what you
+                                experience
+                                and
+                                see in your own world. Recognizing all the abundance you
+                                already
+                                have – and that
+                                it is
+                                possible for you to have even more – increase your
+                                magnetism to all
+                                of its
+                                forms.</p>
+
+                            <p class="card-text">Close your eyes. Take a deep breath in, then slowly let
+                                it out.
+                                Relax . . .</p>
+
+                            <p class="card-text"></p>Fully extend both arms out to your sides, palms open and
                             facing
                             upward in a
                             receiving
-                            position.</p>
+                            position. For 30 seconds, imagine you are surrounded by
+                            limitless
+                            financial
+                            wealth,
+                            success,
+                            prosperity and abundance.</p>
 
-                        <p class="card-text">For 30 seconds, imagine floating in an ocean of
-                            unlimited love,
-                            support, and
-                            acceptance
-                            from
-                            everyone and everything, everywhere in the universe.</p>
+                            <p class="card-text">When you’re ready, open your eyes and lower your arms.
+                                Record how
+                                this feels in
+                                your
+                                body,
+                                mind and emotions.</p>
 
-                        <p class="card-text">Lower your arms. For 10 seconds, mentally send love to
-                            your body,
-                            mind and
-                            emotions.</p>
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
-                        </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Heading Twenty-Three ------------------->
-
-            <div class="card">
-                <div class="card-header row" id="headingTwenty-Three">
-
-                    <div class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwenty-Three" aria-expanded="false"
-                            aria-controls="collapseTwenty-Three">
-                            <h3>23: Solution</h3>
-                        </button>
-                    </div>
-
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
-                    </div>
-                </div>
-
-                <div id="collapseTwenty-Three" class="collapse" aria-labelledby="headingTwenty-Three"
-                    data-parent="#accordion">
-                    <div class="card-body">
-
-                        <p class="card-text">Every challenge contains a solution. Problems are just
-                            situations
-                            waiting to be
-                            transformed.
-                            This can be easy. Be open to inspiration. Be creative.
-                            Be willing to
-                            look both
-                            within
-                            and
-                            outside the box.</p>
-
-                        <p class="card-text">Identify one issue you are currently facing. It can be
-                            related to
-                            your goal, or
-                            something
-                            else. Think of how it could be resolved. Come up with
-                            and record two
-                            solutions.</p>
-
-                        <p class="card-text">Close your eyes. Imagine a locked door in front of you.
-                            As you
-                            gently touch it,
-                            the door
-                            opens up fully and a beautiful, clear light surrounds
-                            you, bathing
-                            you in the
-                            energy of
-                            clarity on all levels. Every area of your life, every
-                            relationship
-                            and situation
-                            is now
-                            working perfectly for you. Anything standing between you
-                            and your
-                            goal is
-                            dissolved. You
-                            are
-                            free and clear to have everything in your life working
-                            perfectly for
-                            you.</p>
-
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
-                        </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Heading Twenty-Four ------------------->
+                <!-- Heading Twenty-Seven ------------------->
 
-            <div class="card">
-                <div class="card-header row" id="headingTwenty-Four">
+                <div class="card">
+                    <div class="card-header row" id="headingTwenty-Seven">
 
-                    <div class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwenty-Four" aria-expanded="false"
-                            aria-controls="collapseTwenty-Four">
-                            <h3>24: Greater</h3>
-                        </button>
-                    </div>
-
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
-                    </div>
-                </div>
-
-                <div id="collapseTwenty-Four" class="collapse" aria-labelledby="headingTwenty-Four"
-                    data-parent="#accordion">
-                    <div class="card-body">
-
-                        <p class="card-text">Life grows, expands and expresses more and more of
-                            itself and its
-                            potential.
-                            Seeds
-                            produce
-                            plants, mental ideas take on physical form. You are here
-                            to grow and
-                            express
-                            greater and
-                            greater potential.</p>
-
-                        <p class="card-text">Think of a time when you happily received much more than
-                            you
-                            expected you would.
-                            What if
-                            there were absolutely no limits to what you could ask
-                            for? How might
-                            that change
-                            your
-                            goal?
-                            Can you ask for something even greater and expand your
-                            goal or
-                            improve it in
-                            some way?</p>
-
-                        <p class="card-text">Rewrite it and make it greater. This might be as simple
-                            as adding
-                            one more
-                            feeling or
-                            item
-                            to your Goal and Feeling Statement or changing the
-                            wording in some
-                            other way.
-                            Try on
-                            your
-                            greater goal and see how it feels.</p>
-
-                        <p class="card-text">Now, ask for even more by restating your new, greater
-                            Goal and
-                            Feeling Statement
-                            aloud.</p>
-
-                        <p class="card-text">Use this new, greater Goal and Feeling Statement going
-                            forward.</p>
-
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
+                        <div class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseTwenty-Seven" aria-expanded="false"
+                                aria-controls="collapseTwenty-Seven">
+                                <h3>27: Let Go</h3>
+                            </button>
                         </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
+
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Heading Twenty-Five ------------------->
+                    <div id="collapseTwenty-Seven" class="collapse" aria-labelledby="headingTwenty-Seven"
+                        data-parent="#accordion">
+                        <div class="card-body">
 
-            <div class="card">
-                <div class="card-header row" id="headingTwenty-Five">
+                            <p class="card-text">Every breath is an act of receiving. Every breath out is
+                                an act of
+                                letting go
+                                and
+                                trusting
+                                that more air will be there when you need it. Let go of
+                                trying to
+                                force things
+                                to
+                                happen.
+                                Have the expectancy that your goal will manifest in
+                                perfect timing.
+                                Let go of
+                                specific
+                                expectations about how it will look or come about.
+                                Relax. Trust.
+                                Keep things
+                                loose.
+                                Leave
+                                the details up to the universe.</p>
 
-                    <div class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwenty-Five" aria-expanded="false"
-                            aria-controls="collapseTwenty-Five">
-                            <h3>25: Deserve</h3>
-                        </button>
-                    </div>
+                            <p class="card-text">Close your eyes. Take a deep breath in, then slowly let
+                                it out.
+                                Relax . . .</p>
 
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
-                    </div>
-                </div>
+                            <p class="card-text">Imagine releasing your goal over to the universe,
+                                symbolically
+                                opening your
+                                hands and
+                                watching your goal gently float upward as you totally
+                                let go and
+                                trust. Trust
+                                that you
+                                will
+                                only take action when it seems right. Surrender. Now,
+                                imagine that
+                                you are
+                                highly
+                                magnetic
+                                to your goal. It is easily coming into your life
+                                experience. There
+                                is no need to
+                                reach
+                                out
+                                for it, struggle, work or effort to make it happen. Your
+                                goal is
+                                like a small,
+                                floating
+                                feather that gently lands onto your open palm.</p>
 
-                <div id="collapseTwenty-Five" class="collapse" aria-labelledby="headingTwenty-Five"
-                    data-parent="#accordion">
-                    <div class="card-body">
+                            <p class="card-text">When you’re ready, open your eyes and record how it
+                                feels to let go
+                                and have
+                                your goal
+                                come
+                                to you easily and naturally.</p>
 
-                        <p class="card-text">The universe wants to continually bless and uplift you.
-                            You deserve
-                            to thrive.
-                            As you
-                            accept
-                            that you do deserve, you can step into greater levels of
-                            happiness
-                            and
-                            expression.</p>
-
-                        <p class="card-text">Share with the other players one thing that you already
-                            have (an
-                            object,
-                            perform,
-                            experience) in your life that you feel you deserve: <span class="bold">"I
-                                am / I have …
-                                and I
-                                deserve it!”</span>“</p>
-
-                        <p class="card-text">Think of a person who has something that you want. This
-                            may or may
-                            not be
-                            related to
-                            your
-                            goal.</p>
-
-                        <p class="card-text"></p>Know that this person is not any better, worthy, or more
-                        deserving
-                        than you in
-                        any way.
-                        They
-                        are just willing to allow themselves to have good in
-                        that area of
-                        their life.
-                        You can do
-                        the
-                        same.</p>
-
-                        <p class="card-text">Close your eyes. For 30 seconds, imagine that you now
-                            have the same
-                            thing as
-                            this other
-                            person. When you’re ready, open your eyes and record
-                            what this feels
-                            like.</p>
-
-                        <p class="card-text"></p>State your Goal and Feeling Statement aloud as if it’s
-                        already a
-                        fact, adding
-                        enthusiastically at the end: “. . . <span class="bold">and I deserve it!”</span></p>
-
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
-                        </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Heading Twneyt-Six ------------------->
+                <!-- Heading Twenty-Eight ------------------->
 
-            <div class="card">
-                <div class="card-header row" id="headingTwenty-Six">
 
-                    <div class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwenty-Six" aria-expanded="false" aria-controls="collapseTwenty-Six">
-                            <h3>26: Jackpot</h3>
-                        </button>
-                    </div>
+                <div class="card">
+                    <div class="card-header row" id="headingTwenty-Eight">
 
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
-                    </div>
-                </div>
-
-                <div id="collapseTwenty-Six" class="collapse" aria-labelledby="headingTwenty-Six"
-                    data-parent="#accordion">
-                    <div class="card-body">
-
-                        <p class="card-text">The universe is a place of limitless abundance. What you
-                            believe is
-                            what you
-                            experience
-                            and
-                            see in your own world. Recognizing all the abundance you
-                            already
-                            have – and that
-                            it is
-                            possible for you to have even more – increase your
-                            magnetism to all
-                            of its
-                            forms.</p>
-
-                        <p class="card-text">Close your eyes. Take a deep breath in, then slowly let
-                            it out.
-                            Relax . . .</p>
-
-                        <p class="card-text"></p>Fully extend both arms out to your sides, palms open and
-                        facing
-                        upward in a
-                        receiving
-                        position. For 30 seconds, imagine you are surrounded by
-                        limitless
-                        financial
-                        wealth,
-                        success,
-                        prosperity and abundance.</p>
-
-                        <p class="card-text">When you’re ready, open your eyes and lower your arms.
-                            Record how
-                            this feels in
-                            your
-                            body,
-                            mind and emotions.</p>
-
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
+                        <div class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseTwenty-Eight" aria-expanded="false"
+                                aria-controls="collapseTwenty-Eight">
+                                <h3>28: Affirmation</h3>
+                            </button>
                         </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
+
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
+                        </div>
+                    </div>
+                    <div id="collapseTwenty-Eight" class="collapse" aria-labelledby="headingTwenty-Eight"
+                        data-parent="#accordion">
+                        <div class="card-body">
+
+                            <p class="card-text">Whatever you repeatedly affirm you are – you become. The
+                                words “I
+                                Am” are
+                                magical keys
+                                of
+                                power. “I Am” opens up many new doors and opportunities
+                                to create
+                                what you want.</p>
+
+                            <p class="card-text">Repeat your Goal and Feeling Statement aloud,
+                                emphasizing one word
+                                more than the
+                                others,
+                                beginning with the first word, then the second word, and
+                                so on,
+                                until you have
+                                repeated
+                                it 7
+                                times.</p>
+
+                            <p class="card-text"></p>Example: “<span class="bold">I</span> am now healthy. I <span
+                                class="bold">am</span> now healthy. I am <span class="bold">now</span>
+                            healthy. I am
+                            now
+                            <span class="bold">healthy</span>. . .”
+
+                            <p class="card-text"></p>Record how it feels to affirm your goal in this way.
+
+                            <div class="form-group shadow-textarea">
+                                <label for="FormControlTextarea6"></label>
+                                <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                    placeholder="Ponderings..."></textarea>
+                            </div>
+                            <div class="button-container">
+                                <input type="button" class="btn btn-info" value="Add Session">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Heading Twenty-Seven ------------------->
+                <!-- Heading Twenty-Nine ------------------->
 
-            <div class="card">
-                <div class="card-header row" id="headingTwenty-Seven">
+                <div class="card">
+                    <div class="card-header row" id="headingTwenty-Nine">
 
-                    <div class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwenty-Seven" aria-expanded="false"
-                            aria-controls="collapseTwenty-Seven">
-                            <h3>27: Let Go</h3>
-                        </button>
-                    </div>
-
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
-                    </div>
-                </div>
-
-                <div id="collapseTwenty-Seven" class="collapse" aria-labelledby="headingTwenty-Seven"
-                    data-parent="#accordion">
-                    <div class="card-body">
-
-                        <p class="card-text">Every breath is an act of receiving. Every breath out is
-                            an act of
-                            letting go
-                            and
-                            trusting
-                            that more air will be there when you need it. Let go of
-                            trying to
-                            force things
-                            to
-                            happen.
-                            Have the expectancy that your goal will manifest in
-                            perfect timing.
-                            Let go of
-                            specific
-                            expectations about how it will look or come about.
-                            Relax. Trust.
-                            Keep things
-                            loose.
-                            Leave
-                            the details up to the universe.</p>
-
-                        <p class="card-text">Close your eyes. Take a deep breath in, then slowly let
-                            it out.
-                            Relax . . .</p>
-
-                        <p class="card-text">Imagine releasing your goal over to the universe,
-                            symbolically
-                            opening your
-                            hands and
-                            watching your goal gently float upward as you totally
-                            let go and
-                            trust. Trust
-                            that you
-                            will
-                            only take action when it seems right. Surrender. Now,
-                            imagine that
-                            you are
-                            highly
-                            magnetic
-                            to your goal. It is easily coming into your life
-                            experience. There
-                            is no need to
-                            reach
-                            out
-                            for it, struggle, work or effort to make it happen. Your
-                            goal is
-                            like a small,
-                            floating
-                            feather that gently lands onto your open palm.</p>
-
-                        <p class="card-text">When you’re ready, open your eyes and record how it
-                            feels to let go
-                            and have
-                            your goal
-                            come
-                            to you easily and naturally.</p>
-
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
+                        <div class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseTwenty-Nine" aria-expanded="false"
+                                aria-controls="collapseTwenty-Nine">
+                                <h3>29: Future</h3>
+                            </button>
                         </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div id="collapseTwenty-Nine" class="collapse" aria-labelledby="headingTwenty-Nine"
+                        data-parent="#accordion">
+                        <div class="card-body">
 
-            <!-- Heading Twenty-Eight ------------------->
+                            <p class="card-text">Everything you attract starts as an idea. You first
+                                made
+                                a request,
+                                had a
+                                desire, or set
+                                a
+                                goal. In one way or another you asked for it to come
+                                into your life.
+                                Goals and
+                                intentions do
+                                manifest with time, energy, focus and action.</p>
 
+                            <p class="card-text">Stand up and fully extend both hands and arms out to
+                                your sides with
+                                palms open
+                                and
+                                facing
+                                upward in a receiving position.</p>
 
-            <div class="card">
-                <div class="card-header row" id="headingTwenty-Eight">
+                            <p class="card-text">Close your eyes. Take a deep breath in, then slowly
+                                let
+                                it out.
+                                Relax . . .</p>
 
-                    <div class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwenty-Eight" aria-expanded="false"
-                            aria-controls="collapseTwenty-Eight">
-                            <h3>28: Affirmation</h3>
-                        </button>
-                    </div>
+                            <p class="card-text">Imagine opening up to fully receive all the good you
+                                can
+                                from the
+                                universe
+                                directly into
+                                your heart. Receive in all love, all light, all
+                                freedom,
+                                all
+                                abundance, all
+                                happiness –
+                                and
+                                any other good quality you can think of.</p>
 
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
-                    </div>
-                </div>
-                <div id="collapseTwenty-Eight" class="collapse" aria-labelledby="headingTwenty-Eight"
-                    data-parent="#accordion">
-                    <div class="card-body">
+                            <p class="card-text">With eyes still closed, lower your arms, and for 10
+                                seconds let
+                                these circulate
+                                throughout
+                                your entire body, mind, and emotions.</p>
 
-                        <p class="card-text">Whatever you repeatedly affirm you are – you become. The
-                            words “I
-                            Am” are
-                            magical keys
-                            of
-                            power. “I Am” opens up many new doors and opportunities
-                            to create
-                            what you want.</p>
+                            <p class="card-text">Now say aloud: <span class="bold">“I now receive and accept this
+                                    into
+                                    my
+                                    life with
+                                    grace and ease!”</span></p>
 
-                        <p class="card-text">Repeat your Goal and Feeling Statement aloud,
-                            emphasizing one word
-                            more than the
-                            others,
-                            beginning with the first word, then the second word, and
-                            so on,
-                            until you have
-                            repeated
-                            it 7
-                            times.</p>
+                            <p class="card-text">Cover your heart with both hands, sealing in all the
+                                qualities you
+                                have just
+                                opened to
+                                receive and your goal into your body, mind and
+                                emotions.</p>
 
-                        <p class="card-text"></p>Example: “<span class="bold">I</span> am now healthy. I <span
-                            class="bold">am</span> now healthy. I am <span class="bold">now</span>
-                        healthy. I am
-                        now
-                        <span class="bold">healthy</span>. . .”
-
-                        <p class="card-text"></p>Record how it feels to affirm your goal in this way.
-
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
-                        </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Heading Twenty-Nine ------------------->
+                <!-- Heading Thirty ------------------->
+                <div class="card">
+                    <div class="card-header row" id="headingThirty">
 
-            <div class="card">
-                <div class="card-header row" id="headingTwenty-Nine">
+                        <h2 class="mb-0 col-md-6">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseThirty" aria-expanded="false" aria-controls="collapseThirty">
+                                <h3>30: Manifestation</h3>
+                            </button>
+                        </h2>
 
-                    <div class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                            data-target="#collapseTwenty-Nine" aria-expanded="false"
-                            aria-controls="collapseTwenty-Nine">
-                            <h3>29: Future</h3>
-                        </button>
+                        <div class="col-md-6 complete-status">
+                            <p><i class="far fa-edit"></i></p>
+                        </div>
                     </div>
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
-                    </div>
-                </div>
-                <div id="collapseTwenty-Nine" class="collapse" aria-labelledby="headingTwenty-Nine"
-                    data-parent="#accordion">
-                    <div class="card-body">
 
-                        <p class="card-text">Everything you attract starts as an idea. You first
-                            made
-                            a request,
-                            had a
-                            desire, or set
-                            a
-                            goal. In one way or another you asked for it to come
-                            into your life.
-                            Goals and
-                            intentions do
-                            manifest with time, energy, focus and action.</p>
+                    <div id="collapseThirty" class="collapse" aria-labelledby="headingThirty" data-parent="#accordion">
+                        <div class="card-body">
 
-                        <p class="card-text">Stand up and fully extend both hands and arms out to
-                            your sides with
-                            palms open
-                            and
-                            facing
-                            upward in a receiving position.</p>
 
-                        <p class="card-text">Close your eyes. Take a deep breath in, then slowly
-                            let
-                            it out.
-                            Relax . . .</p>
+                            <p class="card-text">Everything you attract starts as an idea. You first
+                                made
+                                a request,
+                                had a
+                                desire, or set
+                                a
+                                goal. In one way or another you asked for it to come
+                                into your life.
+                                Goals and
+                                intentions do
+                                manifest with time, energy, focus and action.</p>
 
-                        <p class="card-text">Imagine opening up to fully receive all the good you
-                            can
-                            from the
-                            universe
-                            directly into
-                            your heart. Receive in all love, all light, all
-                            freedom,
-                            all
-                            abundance, all
-                            happiness –
-                            and
-                            any other good quality you can think of.</p>
+                            <p class="card-text">Stand up and fully extend both hands and arms out to
+                                your sides with
+                                palms open
+                                and
+                                facing
+                                upward in a receiving position.</p>
 
-                        <p class="card-text">With eyes still closed, lower your arms, and for 10
-                            seconds let
-                            these circulate
-                            throughout
-                            your entire body, mind, and emotions.</p>
+                            <p class="card-text">Close your eyes. Take a deep breath in, then slowly
+                                let
+                                it out.
+                                Relax . . .</p>
 
-                        <p class="card-text">Now say aloud: <span class="bold">“I now receive and accept this into
+                            <p class="card-text">Imagine opening up to fully receive all the good you
+                                can
+                                from the
+                                universe
+                                directly into
+                                your heart. Receive in all love, all light, all
+                                freedom,
+                                all
+                                abundance, all
+                                happiness –
+                                and
+                                any other good quality you can think of.</p>
+
+                            <p class="card-text">With eyes still closed, lower your arms, and for 10
+                                seconds let
+                                these circulate
+                                throughout
+                                your entire body, mind, and emotions.</p>
+
+                            <p class="card-text">Now say aloud: “I now receive and accept this into
                                 my
                                 life with
-                                grace and ease!”</span></p>
+                                grace and ease!”</p>
 
-                        <p class="card-text">Cover your heart with both hands, sealing in all the
-                            qualities you
-                            have just
-                            opened to
-                            receive and your goal into your body, mind and
-                            emotions.</p>
+                            <p class="card-text">Cover your heart with both hands, sealing in all the
+                                qualities you
+                                have just
+                                opened to
+                                receive and your goal into your body, mind and
+                                emotions.</p>
 
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
-                        </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Heading Thirty ------------------->
-            <div class="card">
-                <div class="card-header row" id="headingThirty">
-
-                    <h2 class="mb-0 col-md-6">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThirty"
-                            aria-expanded="false" aria-controls="collapseThirty">
-                            <h3>30: Manifestation</h3>
-                        </button>
-                    </h2>
-
-                    <div class="col-md-6 complete-status">
-                        <p><i class="far fa-edit"></i></p>
-                    </div>
-                </div>
-
-                <div id="collapseThirty" class="collapse" aria-labelledby="headingThirty" data-parent="#accordion">
-                    <div class="card-body">
-
-
-                        <p class="card-text">Everything you attract starts as an idea. You first
-                            made
-                            a request,
-                            had a
-                            desire, or set
-                            a
-                            goal. In one way or another you asked for it to come
-                            into your life.
-                            Goals and
-                            intentions do
-                            manifest with time, energy, focus and action.</p>
-
-                        <p class="card-text">Stand up and fully extend both hands and arms out to
-                            your sides with
-                            palms open
-                            and
-                            facing
-                            upward in a receiving position.</p>
-
-                        <p class="card-text">Close your eyes. Take a deep breath in, then slowly
-                            let
-                            it out.
-                            Relax . . .</p>
-
-                        <p class="card-text">Imagine opening up to fully receive all the good you
-                            can
-                            from the
-                            universe
-                            directly into
-                            your heart. Receive in all love, all light, all
-                            freedom,
-                            all
-                            abundance, all
-                            happiness –
-                            and
-                            any other good quality you can think of.</p>
-
-                        <p class="card-text">With eyes still closed, lower your arms, and for 10
-                            seconds let
-                            these circulate
-                            throughout
-                            your entire body, mind, and emotions.</p>
-
-                        <p class="card-text">Now say aloud: “I now receive and accept this into
-                            my
-                            life with
-                            grace and ease!”</p>
-
-                        <p class="card-text">Cover your heart with both hands, sealing in all the
-                            qualities you
-                            have just
-                            opened to
-                            receive and your goal into your body, mind and
-                            emotions.</p>
-
-                        <div class="form-group shadow-textarea">
-                            <label for="FormControlTextarea6"></label>
-                            <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
-                                placeholder="Ponderings..."></textarea>
-                        </div>
-                        <div class="button-container">
-                            <input type="button" class="btn btn-info" value="Add Session">
+                            <form class="game-form">
+                                <div class="form-group shadow-textarea">
+                                    <label for="FormControlTextarea6"></label>
+                                    <textarea class="form-control z-depth-1" d="FormControlTextarea6" rows="9"
+                                        placeholder="Ponderings..."></textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input type="submit" class="btn btn-info" value="Add Session">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -2325,21 +2405,11 @@
         </div>
     </footer>
 
-
-
-
-
-    <!-- Optional JavaScript -->
-
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
     <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script> -->
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
@@ -2347,9 +2417,8 @@
 
     <script src="https://kit.fontawesome.com/343fa11119.js" crossorigin="anonymous"></script>
 
-    <script src="jquery.tagsinput-revisited.js"></script>
-
-   <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script src="validate.js"></script>
 </body>
 
 </html>
