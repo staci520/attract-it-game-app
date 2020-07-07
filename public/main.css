@@ -32,38 +32,35 @@ h6 {
     line-height: 1.6rem;
 }
 
-
 .profile content .p {
     line-height: 1.6;
 }
 
 /* Heading */
 
-.hero-container {
-    background: url("images/Test-image.png") no-repeat center center;
+/* .hero-container {
+    background: url("images/Hero2.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-position: center bottom;
-    width: 100%;
+    width: 600px;
     height: 925px;
     background-size: cover;
     padding: 50px;
-}
-
-/* img {
-    filter: grayscale(100%);
-  } */
-
-/* .container {
-    width: 100%;
-    padding: 5%;
-    margin-bottom: 50px;
 } */
 
 .container-fluid {
     margin-bottom: 25px;
 }
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.img-left {}
 
 #play-game-section {
     margin: 0, auto 0;
@@ -81,7 +78,7 @@ h1 {
 
 h2 {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 
@@ -89,7 +86,7 @@ h2 {
 h3 {
     display: block;
     text-align: left;
-    font-size: 23px;
+    font-size: 18px;
     color: white;
     margin: 5px;
 }
@@ -98,23 +95,23 @@ h4 {
     text-align: center;
     padding: 18px;
     margin: 15px;
-    font-size: 22px;
+    font-size: 20px;
     color: white;
     line-height: 1.9rem;
 }
 
 h5 {
-    text-align: center;
-    font-size: 22px;
-    padding: 8px;
     color: black;
+    text-align: center;
+    padding: 8px;
 }
 
 h6 {
     color: white;
     text-align: center;
-    line-height: 1.6rem;
-    padding: 10px;
+    /* line-height: 1.4rem; */
+    padding: 8px;
+
 }
 
 
@@ -129,7 +126,7 @@ h6 {
 }
 
 /* Collapse Arrow */
-
+/* 
 .collapse-arrow .icon {
     transform: rotate(-180deg);
     transition: .3s transform ease-in-out;
@@ -138,7 +135,7 @@ h6 {
 
 .collapse-arrow .collapsed .icon {
     transform: rotate(0deg);
-}
+} */
 
 
 .btn-link {
@@ -175,33 +172,12 @@ h6 {
     font-weight: bold;
 }
 
-
-/* Navigation Bar */
-
-/* .navbar {
-    padding: 0 0 4.5rem;
-  }
-  
-  .navbar-brand {
-    font-family: 'Lustria', serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-  } */
-
-/* .nav-bar-item {
-    padding: 0 18px;
-    font-weight: bold;
-    font-size: 22px;
-  }
-  */
-
-
-  .dashboard-img  {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 20px;
-  }
+.dashboard-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
 
 a:link {
     text-decoration: none;
@@ -236,16 +212,27 @@ a:hover {
     height: 200px;
 }
 
-/* Getting Started Page */
+/* Get Started Page */
+
+.get-started-container {
+    padding: 5%
+} 
+
+.center-right {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+}
 
 #get-started-page {
     background-color: #004268;
-    padding: 5%;
-    text-align: center;
+
 }
 
 .get-started-title-1 {
-
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -325,7 +312,7 @@ a:hover {
     background-color: #004268;
     padding: 5%;
     /* text-align: center; */
-    width: 100%;
+    width: 90%;
 }
 
 .accordion .card-header a:before {
@@ -490,3 +477,116 @@ a:hover {
 .social-icon {
     margin: 20px 10px;
 }
+
+
+
+/* Responsive  */
+
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    body .login-container {
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 520px;
+        margin: auto;
+        background-color: #ffffff;
+        /* opacity: .75; */
+        -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+    }
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+        body .login-container {
+            position: relative;
+            overflow: hidden;
+            width: 400px;
+            height: 520px;
+            margin: auto;
+            background-color: #ffffff;
+            /* opacity: .75; */
+            -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+        }
+
+
+        .img-svg {
+            width: 100%;
+            height: 100%;
+          
+        } 
+
+        h1 {
+            font-family: "Lustria", serif;
+            font-size: 48px;
+            color: black;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 24px;
+        }
+        
+        
+        
+        h3 {
+            display: block;
+            text-align: left;
+            font-size: 23px;
+            color: white;
+            margin: 5px;
+        }
+        
+        h4 {
+            text-align: center;
+            padding: 18px;
+            margin: 15px;
+            font-size: 22px;
+            color: white;
+            line-height: 1.9rem;
+        }
+        
+        h5 {
+            color: black;
+            text-align: center;
+            font-size: 18px;
+            padding: 8px;
+        }
+        
+        h6 {
+            color: white;
+            text-align: center;
+            /* line-height: 1.4rem; */
+            padding: 8px;
+            font-size: 18px;
+        }
+        
+
+    }
+    
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+
+        .img-svg {
+            width: 80%;
+            height: 80%;
+          
+        } 
+    }
+
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+        .img-svg {
+            width: 100%;
+            height: 100%;
+    }
