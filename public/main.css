@@ -22,6 +22,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+
 h1,
 h2,
 h3,
@@ -36,21 +37,7 @@ h6 {
     line-height: 1.6;
 }
 
-/* Heading */
-
-/* .hero-container {
-    background: url("images/Hero2.png") no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-position: center bottom;
-    width: 600px;
-    height: 925px;
-    background-size: cover;
-    padding: 50px;
-} */
-
-.container-fluid {
+Gary Playlist .container-fluid {
     margin-bottom: 25px;
 }
 
@@ -60,13 +47,9 @@ h6 {
     margin-top: 20px;
 }
 
-.img-left {}
-
-#play-game-section {
-    margin: 0, auto 0;
-    width: 88%;
-    padding: 35px;
-}
+/* .img-svg {
+    display: none;
+} */
 
 h1 {
     font-family: "Lustria", serif;
@@ -93,11 +76,10 @@ h3 {
 
 h4 {
     text-align: center;
-    padding: 18px;
-    margin: 15px;
     font-size: 20px;
     color: white;
     line-height: 1.9rem;
+
 }
 
 h5 {
@@ -110,7 +92,7 @@ h6 {
     color: white;
     text-align: center;
     /* line-height: 1.4rem; */
-    padding: 8px;
+    margin: 25px 100px 25px;
 
 }
 
@@ -123,20 +105,8 @@ h6 {
 
 .button-container {
     text-align: center;
+    padding: 15px;
 }
-
-/* Collapse Arrow */
-/* 
-.collapse-arrow .icon {
-    transform: rotate(-180deg);
-    transition: .3s transform ease-in-out;
-    display: inline-block;
-}
-
-.collapse-arrow .collapsed .icon {
-    transform: rotate(0deg);
-} */
-
 
 .btn-link {
     font-weight: bold;
@@ -216,7 +186,7 @@ a:hover {
 
 .get-started-container {
     padding: 5%
-} 
+}
 
 .center-right {
     color: white;
@@ -310,9 +280,17 @@ a:hover {
 
 #play-game-section {
     background-color: #004268;
-    padding: 5%;
-    /* text-align: center; */
-    width: 90%;
+}
+
+.game-form {
+    background-image: radial-gradient(circle, #722960 0%, #468FB3 100%);
+}
+
+.accordion {
+    /* margin: 0 auto; */
+
+    margin: 25px 85px;
+
 }
 
 .accordion .card-header a:before {
@@ -391,7 +369,7 @@ a:hover {
 }
 
 #headingSixteen {
-    background-color: #AABC81;
+    background-color: #0259B9;
 }
 
 #headingSeventeen {
@@ -464,8 +442,6 @@ a:hover {
 }
 
 
-
-
 /* Footer */
 
 .footer-container {
@@ -473,12 +449,9 @@ a:hover {
     text-align: center;
 }
 
-
 .social-icon {
     margin: 20px 10px;
 }
-
-
 
 /* Responsive  */
 
@@ -516,13 +489,6 @@ No media query since this is the default in Bootstrap */
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
         }
 
-
-        .img-svg {
-            width: 100%;
-            height: 100%;
-          
-        } 
-
         h1 {
             font-family: "Lustria", serif;
             font-size: 48px;
@@ -530,14 +496,14 @@ No media query since this is the default in Bootstrap */
             padding: 15px;
             text-align: center;
         }
-        
+
         h2 {
             color: white;
             font-size: 24px;
         }
-        
-        
-        
+
+
+
         h3 {
             display: block;
             text-align: left;
@@ -545,48 +511,45 @@ No media query since this is the default in Bootstrap */
             color: white;
             margin: 5px;
         }
-        
+
         h4 {
             text-align: center;
-            padding: 18px;
-            margin: 15px;
+            margin: 25px;
             font-size: 22px;
             color: white;
             line-height: 1.9rem;
         }
-        
+
         h5 {
             color: black;
             text-align: center;
             font-size: 18px;
             padding: 8px;
         }
-        
+
         h6 {
             color: white;
             text-align: center;
-            /* line-height: 1.4rem; */
-            padding: 8px;
             font-size: 18px;
         }
-        
 
     }
-    
 
     /* Large devices (desktops, 992px and up) */
     @media (min-width: 992px) {
-
-        .img-svg {
-            width: 80%;
-            height: 80%;
-          
-        } 
+        h4 {
+            text-align: center;
+            margin: 75px;
+            font-size: 22px;
+            color: white;
+            line-height: 1.9rem;
+        }
+     
     }
 
     /* Extra large devices (large desktops, 1200px and up) */
+
     @media (min-width: 1200px) {
-        .img-svg {
-            width: 100%;
-            height: 100%;
+     
     }
+}
