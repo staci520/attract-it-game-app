@@ -31,17 +31,246 @@ CREATE TABLE game_modules (
 
 
 
+INSERT INTO public.template_modules (title,title_color,description,sort_order) VALUES 
+('Intention','F8270A','We attract into our lives what we focus on. Our thoughts, feelings, actions and intentions are magnetic. That''s the Law of Attraction! It''s fun to attract new things into your life when you are clear on a goal, open to change, and playful. On a scale of 1 to 10, how confident are you of achieving your goal?
 
--- INSERT INTO public.users (user_name,"password") VALUES 
--- ('admin','admin')
--- ,('user','user')
--- ,('log','log')
--- ,('sandra','sandra')
--- ;
+For 30 seconds imagine a scene in your mind in which you have already achieved your goal. What will you hear, see and feel when it''s reached?',1)
+,('Universe','FF4840','The entire universe wants to fully support you in achieving your goal. Think of a time when you received help from someone and felt supported.',2)
+,('Essence','FF5D53','Feelings magnetically attract matching objects and experiences into our lives. We desire things because of the feelings they give us. Underneath your goal for an object or experience is an essence - the positive feeling you want from achieving your goal. Feeling the essence right now helps you attract a goal more easily.
 
--- INSERT INTO public.book_collection (user_id,collection_name) VALUES 
--- (4,'Romance')
--- ,(2,'Science and Robots')
--- ,(1,'Healthcare')
--- ,(3,'Sea Animals')
--- ;
+Look at your Goal and Feeling Statement and review the list of feelings you want it to give you.
+
+Ask yourself:
+
+How can I experience these feelings right now before reaching my goal?
+
+What is the essence I am looking to experience?
+
+What other activities, attitudes or actions could give me the very same feelings that I want my goal to give me -- right now?',3)
+,('Easy','FF816F','Life can be easy if you allow it to be. Close your eyes. Take a deep breath in, then slowly let it out. Relax . . .
+
+For 30 seconds, imagine your goal and feeling appearing effortlessly in your life. All doors are open. All resources are available for you. Everything is easy for you. It’s as easy as breathing. Begin now.',4)
+,('Quantum Leap','FF9E88','When you are willing to change yourself, you can experience a quantum leap – a dramatic change in some are of your life. To take a quantum leap now, say aloud: “I’m willing to make an inner change to see an outer change in my life.” Choose one: clock, rocket, DNA, or rock.
+
+a) Clock: Imagine dreaming of standing on a mountaintop. You glance down at your wristwatch. It has no hands or numbers. It simply says “NOW.” You wake up with the thought “Now is the time!” echoing in your mind.
+
+b) Rocket: Close your eyes. Imagine jumping into a rocket ship being shot into space, hurtling at tremendous speed through the galaxy, excited by the adventure of exploring the unknown, trusting that everything is happening perfectly.
+
+c) Rock: Is there any burden you are carrying that may be slowing down from reaching your goal? If so, imagine dropping it like a heavy rock you’ve been carrying. Feel the lightness now that the burden has been released.
+
+d) DNA: Close your eyes. Imagine that every atom, cell and strand of DNA in your body is now programmed with your goal. You are 100 times more magnetic to it. How does that make you feel?',5)
+,('Limitless','FE8421','You live in a universe of limitless possibilities. You have the power to experience anything you want – first in your mind and emotions, then in your life.
+
+Think of a time when you experienced something that seemed impossible but happened anyway. This could be a miracle, good luck, or something else you did, saw or heard about beyond what is thought of as normal.
+
+Complete the following sentences:
+
+1. If I lived in a universe of limitless possibilities, I could . . .
+
+2. One superpower I would like to have is . . .
+
+3. If I had no fear, I would . . .',6)
+,('Act As If','FFAA53','Life is a reflection – a mirror. That gives back to you the effects of your actions. You are always the starring actor in your own life story. You are always the starring actor in your own life story. Through your actions, you can become the model of your goal on every level of your being.
+
+Ask yourself, “If I were acting in a movie, how might I think, walk, talk, feel and act as the person who had already attracted my goal?”
+
+To act as if you have already attracted your goal, complete the following “Action Statements” aloud and record your responses.',7)
+,('Enlightenment','F5C174','Enlightenment is seeing things clearly and having compassion for everyone. You can access and express the wisdom of the universe.
+
+Close your eyes. Take a deep breath, then slowly let it out. Relax.
+
+Fully extend both arms out to your sides, palms open and facing upward in a receiving position.
+
+For 30 seconds imagine you are surrounded by a beautiful, uplifting light. You feel connected to all wisdom, all knowledge, all love, all light, all support, and all power.
+
+With eyes closed, take the role of a wise, enlightened person. When you’re ready, open your eyes, lower your arms, and record a brief piece of wisdom – this could be a quote, something you have learned or helpful advice you’ve picked up.',8)
+,('Perfect Health','F7D090','Your body, mind and emotions have tremendous healing capacity. Perfect health is the foundation of a balanced life.
+
+Close your eyes, take a deep breath, then slowly let it out. Relax.
+Fully extend both arms out to your sides, palms open and facing upward in a receiving position. For 30 seconds imagine you are under a waterfall of healing energy, being infused with vitality, strength, wellbeing, and radiant health on all levels.
+
+With eyes closed, imagine you possess limitless healing power for another 10 seconds. You are surrounded by healing energy. You can automatically heal yourself and others of any physical or emotional pain.
+
+Now send this energy out into the world to all those in need of healing.',9)
+,('Halphabet','EECFA4','Words have power to energize and inspire. Each higher word that you speak opens up a new world of possibility.
+
+Beginning with the letter A, come up with the highest, most positive single word or sound you can. Quickly go through the Halphabet (higher alphabet). Choose higher words that make you feel good in body, mind and emotions.',10)
+;
+INSERT INTO public.template_modules (title,title_color,description,sort_order) VALUES 
+('Revise','569443','You can mentally and emotionally rewrite your past. Revising changes your present and influences your future. Why not give yourself a do-over?
+
+Ask yourself, “Is there anything that happened in my past that I feel may somehow interfere with achieving my goal?”
+
+Close your eyes. Take a deep breath in, then slowly let out. Relax . . .
+
+Pick a past event from your life, related to your goal or not, that you would like to revise. This might be an unhappy memory or was the opposite of what you wanted. Trust that whatever comes to mind is perfect for you to revise at this time.
+
+For 30 seconds, mentally revise the event as if it had been positive and that something different had happened instead. How did you want it to turn out? How did you want the people to act? Replay it, visualizing and emotionally experiencing it exactly the way you wanted it to happen. Make it a positive outcome.',11)
+,('Gratitude','61235D','You magnetically attract all the good that comes into your life. Recognizing and appreciating this abundance of good draws more to you. Your life, physical body, experiences, and the people in your life are wonderful gift. You have much to be grateful for. You attract it all!
+
+Express gratitude for one thing you already have in your life. What do you appreciate about your body, mind, possessions, nature, or the experiences, opportunities and people in your life? Use the phrase: “I am grateful for/I appreciate …” and end with, “…and I thank myself for attracting it!”
+
+Express gratitude for your goal and feeling aloud as if it’s already a fact:',21)
+,('Belief','56994C','A belief is an idea about reality that you accept as true – but that does not make it a fact. But when you consistently believe in an idea about reality, it becomes a fact for you. You can just as easily choose to believe in something else and attract a different experience. Owning your beliefs gives you the power to change them.
+
+By being honest with what you already do believe, you can change it. You can simply reverse any negative belief by turning it into a positively-worded belief that empowers you. Is there something standing between you and your goal?
+
+Ask yourself: “What is one belief I would need to change in order to have this goal in my life?”
+
+Now quickly change that belief into one that is supportive of your goal and record it.
+
+State this new belief aloud as if it’s already one you naturally have, followed by, “This is normal for me.” You can repeat this a few times to let it sink in deeply.',12)
+,('Doubt','689F5C','Having doubt when creating something new is normal. You might look at the outer world and wonder if your goal is truly possible. It is. Don’t let doubt sidetrack you! Be persistent in bringing your focus back to your goal and how you will feel when it is achieved. Use doubt as a gold opportunity to change at the deepest level.
+
+Ask yourself if you truly feel you deserve your Goal and Feeling statement.
+
+Do you feel you can truly attract it into your life.
+
+If you have any doubts or concerns about your goal, explore these and be honest with yourself about how you truly feel rather than avoiding it, taking time to understand doubt is a positive step.
+
+When obstacles appear in life, release the need to judge yourself for not being perfect. Everyone faces challenges. Have compassion for yourself as you learn and explore.
+
+Give yourself time to go within and ask what new beliefs or actions could empower you. Record these. Empower yourself and sit out your next turn to clear your mind. Review new steps that you could take. See this as a positive process.',13)
+,('Dream','88AB6C','What if your reality is a dream symbolizing your beliefs, emotions and thoughts?
+
+Look around where you are right now, as if you are truly in a changeable dream that automatically responds to your thoughts and feelings.
+
+What if your body, the objects, and all the people in your life were dream characters that we were creating?
+
+What if this dream was like a play you had written for fun, to learn from or to simply have new experiences?
+
+What if you could change your dream any way you wanted it to be?
+
+Close your eyes for 10 seconds. Imagine having a nighttime dream of your goal playing out wonderfully in a simple dream, a prophetic dream, a metaphor, or a highly imaginative and exciting dream symbolizing the achievement of your goal.
+
+Imagine waking up from this wonderful dream of achieving your goal. When you are ready, open your eyes and say “I had a wonderful dream!”
+
+Record in detail the dream and close with and when I woke up from my dream, I felt. . .!”',14)
+,('Voices','AABC81','Quickly write a dramatic scene of four brief lines of dialogue as if you are happily sharing with others that you’ve reached your goal and are hearing them congratulate you.
+
+Allow these voices of support, congratulations and encouragement to be real.
+
+Now act the scene out. Experiment with emotions, ranging from excited to lighthearted. Improvise dialogue. Make it slightly different each time. Try on an accent or use a prop!
+
+In your own words, give yourself a compliment on successfully attracting your goal and your own voice by using the phrase “I did it! I am now / I now have (Goal) and I feel (Feeling)!”',15)
+,('Adventure','0259B9','Look at life as an adventure with limitless possibilities.
+
+Briefly describe an adventure you would like to experience – without limits – as if it is already happened and you are joyfully recalling it with friends. This can be related to your goal or be something else fun that you’ve always wanted to do. Describe what you did, where you went and who you were with. How did it feel? Make it sensory rich. Be lively as you begin recounting your adventure tale with the phrase: “What an adventure I had! Let me tell you what happened. It all started when . . .”',16)
+,('Success','1A7DA7','Every time you take action on a goal – no matter what seems to be happening – you are being successful. Success is remaining so committed to your goal. That nothing can talk you out of it.
+
+Briefly recall times in your life when you felt very successful, maybe handling something well or skillfully, winning a prize, helping someone achieving a goal, or being praised.
+
+Close your eyes. Take a deep breath in, then slowly let it out. Relax . . .
+
+Fully extend both arms out to your sides, palms open and facing upward in the receiving position.
+
+For 30 seconds imagine what it would feel like to be magnetic to unlimited success. Luxuriate in it.
+
+Imagine that you have achieved your goal! Use the phrase: “I succeeded: I am now / I now have (Goal) and I feel … (Feeling).”',17)
+,('Mood','468FB3','Moods and thoughts are temporary. They come and go. You have power over them. You choose your mood by how you think, feel or react. Moods are magnetic – they attract more of the same.
+
+What mood are you experiencing now that you have attracted your goal fully into your life? Record how it feels.
+
+Close your eyes. Take a deep breath in, then slowly let it out. Relax . . .
+
+For 30 seconds, imagine that this mood is an atmosphere all around you – as if you are being showered with the emotional energy achieving your goal gives you.
+
+Capture how this feels in your body and emotions. How are you experiencing it? What are the sensations?
+
+Now double the intensity of the mood for 10 seconds. How does this feel?
+
+Finally, for another 10 seconds, increase the mood so that it is infinite. You are being showered in the mood from everyone and everything, everywhere in the universe, on every level of your being. How does this feel?',18)
+,('Action','7DA4B4','Actions create reality. You are what you do – not only what you say. Words have to be backed up by some kind of meaningful action in order to create results.
+
+Think of a time in the past when you took action on a goal and got great results.
+
+Ask yourself: “Are there any practical and concrete actions I can take right now to do my part to attract my goal? How can I. . . ?
+
+Brainstorm and see what comes to mind. List two possible actions you could take. You may wish to also ask others if they have any practical, concrete suggestions on how to ring your goal into manifestation. Record these and then do them.',19)
+;
+INSERT INTO public.template_modules (title,title_color,description,sort_order) VALUES 
+('Story','A6B7B8','What’s your story? You already know old stories of struggle, overcoming obstacles or not having what you wanted. What do these old stories really have to do with who you are right now, or your goal? Nothing – unless you allow it. Old negative stories only live on if you keep telling them. You can wipe the slate clean and. Tell a positive story of success, joy and case right now. You are the author of your own story.
+
+Conjure a new story of how easy it was to reach your goal and how great it feels to have it in your life. (Not a fantasy/magical solution, but a logical story of how you reached your goal and what it feels like to have reached it). Repeat your new story starting with the opening phase: “It was so easy for me to (Goal)! What happened was . . .”',20)
+,('Love','22960','Love is an attitude of receptivity to a universe of good within you, and all around you. An ocean of invisible love washes over all of your experience. You exist within this ocean of love, even if it appears separate from you.
+
+Close your eyes. Take a deep breath in, then slowly let it out. Relax . . .
+
+Fully extend both arms out to your sides, palms open and facing upward in a receiving position.
+
+For 30 seconds, imagine floating in an ocean of unlimited love, support, and acceptance from everyone and everything, everywhere in the universe.
+
+Lower your arms. For 10 seconds, mentally send love to your body, mind and emotions.',22)
+,('Solution','8C3F6F','Every challenge contains a solution. Problems are just situations waiting to be transformed. This can be easy. Be open to inspiration. Be creative. Be willing to look both within and outside the box.
+
+Identify one issue you are currently facing. It can be related to your goal, or something else. Think of how it could be resolved. Come up with and record two solutions.
+
+Close your eyes. Imagine a locked door in front of you. As you gently touch it, the door opens up fully and a beautiful, clear light surrounds you, bathing you in the energy of clarity on all levels. Every area of your life, every relationship and situation is now working perfectly for you. Anything standing between you and your goal is dissolved. You are free and clear to have everything in your life working perfectly for you.',23)
+,('Greater','A95877','Life grows, expands and expresses more and more of itself and its potential. Seeds produce plants, mental ideas take on physical form. You are here to grow and express greater and greater potential.
+
+Think of a time when you happily received much more than you expected you would. What if there were absolutely no limits to what you could ask for? How might that change your goal? Can you ask for something even greater and expand your goal or improve it in some way?
+
+Rewrite it and make it greater. This might be as simple as adding one more feeling or item to your Goal and Feeling Statement or changing the wording in some other way. Try on your greater goal and see how it feels.
+
+Now, ask for even more by restating your new, greater Goal and Feeling Statement aloud.
+
+Use this new, greater Goal and Feeling Statement going forward.',24)
+,('Deserve','C07789','The universe wants to continually bless and uplift you. You deserve to thrive. As you accept that you do deserve, you can step into greater levels of happiness and expression.
+
+Think of one thing that you already have (an object, relationship, experience) in your life that you feel you deserve: "I am / I have … and I deserve it!”“
+
+Think of a person who has something that you want. This may or may not be related to your goal.
+
+Know that this person is not any better, worthy, or more deserving than you in any way. They are just willing to allow themselves to have good in that area of their life. You can do the same.
+
+Close your eyes. For 30 seconds, imagine that you now have the same thing as this other person. When you’re ready, open your eyes and record what this feels like.
+
+State your Goal and Feeling Statement aloud as if it’s already a fact, adding enthusiastically at the end: “. . . and I deserve it!”',25)
+,('Jackpot','F23250','The universe is a place of limitless abundance. What you believe is what you experience and see in your own world. Recognizing all the abundance you already have – and that it is possible for you to have even more – increase your magnetism to all of its forms.
+
+Close your eyes. Take a deep breath in, then slowly let it out. Relax . . .
+
+Fully extend both arms out to your sides, palms open and facing upward in a receiving position. For 30 seconds, imagine you are surrounded by limitless financial wealth, success, prosperity and abundance.
+
+When you’re ready, open your eyes and lower your arms. Record how this feels in your body, mind and emotions.',26)
+,('Let Go','EB495E','Every breath is an act of receiving. Every breath out is an act of letting go and trusting that more air will be there when you need it. Let go of trying to force things to happen. Have the expectancy that your goal will manifest in perfect timing. Let go of specific expectations about how it will look or come about. Relax. Trust. Keep things loose. Leave the details up to the universe.
+
+Close your eyes. Take a deep breath in, then slowly let it out. Relax . . .
+
+Imagine releasing your goal over to the universe, symbolically opening your hands and watching your goal gently float upward as you totally let go and trust. Trust that you will only take action when it seems right. Surrender. Now, imagine that you are highly magnetic to your goal. It is easily coming into your life experience. There is no need to reach out for it, struggle, work or effort to make it happen. Your goal is like a small, floating feather that gently lands onto your open palm.
+
+When you’re ready, open your eyes and record how it feels to let go and have your goal come to you easily and naturally.',27)
+,('Affirmation','F26570','Whatever you repeatedly affirm you are – you become. The words “I Am” are magical keys of power. “I Am” opens up many new doors and opportunities to create what you want.
+
+Repeat your Goal and Feeling Statement aloud, emphasizing one word more than the others, beginning with the first word, then the second word, and so on, until you have repeated it 7 times.
+
+Example: “I am now healthy. I am now healthy. I am now healthy. I am now healthy. . .”
+
+Record how it feels to affirm your goal in this way.',28)
+,('Future','F47575','Everything you attract starts as an idea. You first made a request, had a desire, or set a goal. In one way or another you asked for it to come into your life. Goals and intentions do manifest with time, energy, focus and action.
+
+Stand up and fully extend both hands and arms out to your sides with palms open and facing upward in a receiving position.
+
+Close your eyes. Take a deep breath in, then slowly let it out. Relax . . .
+
+Imagine opening up to fully receive all the good you can from the universe directly into your heart. Receive in all love, all light, all freedom, all abundance, all happiness – and any other good quality you can think of.
+
+With eyes still closed, lower your arms, and for 10 seconds let these circulate throughout your entire body, mind, and emotions.
+
+Now say aloud: “I now receive and accept this into my life with grace and ease!”
+
+Cover your heart with both hands, sealing in all the qualities you have just opened to receive and your goal into your body, mind and emotions.',29)
+,('Manifestation','F99287','Everything you attract starts as an idea. You first made a request, had a desire, or set a goal. In one way or another you asked for it to come into your life. Goals and intentions do manifest with time, energy, focus and action.
+
+Stand up and fully extend both hands and arms out to your sides with palms open and facing upward in a receiving position.
+
+Close your eyes. Take a deep breath in, then slowly let it out. Relax . . .
+
+Imagine opening up to fully receive all the good you can from the universe directly into your heart. Receive in all love, all light, all freedom, all abundance, all happiness – and any other good quality you can think of.
+
+With eyes still closed, lower your arms, and for 10 seconds let these circulate throughout your entire body, mind, and emotions.
+
+Now say aloud: “I now receive and accept this into my life with grace and ease!”
+
+Cover your heart with both hands, sealing in all the qualities you have just opened to receive and your goal into your body, mind and emotions.',30)
+;

@@ -8,7 +8,7 @@ const TemplateModuleService = {
         'template-module.completed',
       )
   },
-  getTemplateModuleById(db, template-module_id) {
+  getTemplateModuleById(db, templateModule_id) {
     return db
       .from('template-module')
       .select(
@@ -16,7 +16,7 @@ const TemplateModuleService = {
         'template-module.title',
         'template-module.completed',
       )
-      .where('template-module.id', template-module_id)
+      .where('template-module.id', templateModule_id)
       .first()
   },
   insertTemplateModule(db, newTemplateModule) {
@@ -28,14 +28,14 @@ const TemplateModuleService = {
         return rows[0]
       })
   },
-  deleteTemplateModule(db, template-module_id) {
+  deleteTemplateModule(db, templateModule_id) {
     return db('template-module')
-      .where({'id': template-module_id})
+      .where({'id': templateModule_id})
       .delete()
   },
-  updateTemplateModule(db, template-module_id, newTemplateModule) {
+  updateTemplateModule(db, templateModule_id, newTemplateModule) {
     return db('template-module')
-      .where({id: template-module_id})
+      .where({id: templateModule_id})
       .update(newTemplateModule, returning=true)
       .returning('*')
   }

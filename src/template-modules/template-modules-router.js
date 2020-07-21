@@ -1,27 +1,37 @@
+//import external resources
 const path = require('path')
 const express = require('express')
 const xss = require('xss')
+
+//import local service
 const TemplateModuleService = require('./template-module-service')
 
-const template-moduleRouter = express.Router()
+//load router and jSon parser
+const templateModuleRouter = express.Router()
 const jsonParser = express.json()
 
-const serializeTemplateModule = template-module => ({
-  id: template-module.id,
-  title: xss(template-module.title),
-  completed: template-module.completed
+//serialize template module data
+const serializeTemplateModule = templateModule => ({
+  id: templateModule.id,
+  title: xss(templateModule.title),
+  completed: templateModule.completed
 })
 
-template-moduleRouter
+//define template module router (for all data)
+templateModuleRouter
   .route('/')
+
+  //read data router
   .get((req, res, next) => {
     const knexInstance = req.app.get('db')
     TemplateModuleService.getTemplateModules(knexInstance)
-      .then(template-modules => {
-        res.json(template-modules.map(serializeTemplateModule))
+      .then(templateModules => {
+        res.json(templateModules.map(serializeTemplateModule))
       })
       .catch(next)
   })
+
+  //create new template module router 
   .post(jsonParser, (req, res, next) => {
     const { title, completed = false } = req.body
     const newTemplateModule = { title }
@@ -32,62 +42,71 @@ template-moduleRouter
           error: { message: `Missing '${key}' in request body` }
         })
 
-    newTemplateModule.completed = completed;  
+    newTemplateModule.completed = completed;
 
     TemplateModuleService.insertTemplateModule(
       req.app.get('db'),
       newTemplateModule
     )
-      .then(template-module => {
+      .then(templateModule => {
         res
           .status(201)
-          .location(path.posix.join(req.originalUrl, `/${template-module.id}`))
-          .json(serializeTemplateModule(template-module))
+          .location(path.posix.join(req.originalUrl, `/${templateModule.id}`))
+          .json(serializeTemplateModule(templateModule))
       })
       .catch(next)
   })
 
-template-moduleRouter
+//define template module router for one item by ID
+templateModuleRouter
   .route('/:template-module_id')
+
+//for all routes do this
   .all((req, res, next) => {
-    if(isNaN(parseInt(req.params.template-module_id))) {
+    if (isNaN(parseInt(req.params.templateModule_id))) {
       return res.status(404).json({
         error: { message: `Invalid id` }
       })
     }
     TemplateModuleService.getTemplateModuleById(
       req.app.get('db'),
-      req.params.template-module_id
+      req.params.templateModule_id
     )
-      .then(template-module => {
-        if (!template-module) {
-          return res.status(404).json({
-            error: { message: `TemplateModule doesn't exist` }
-          })
-        }
-        res.template-module = template-module
-        next()
+      .then(templateModule => {
+        if(!template- module) {
+      return res.status(404).json({
+        error: { message: `TemplateModule doesn't exist` }
       })
-      .catch(next)
+    }
+    res.templateModule = templateModule
+    next()
   })
+  .catch(next)
+  })
+
+  //read data by id
   .get((req, res, next) => {
-    res.json(serializeTemplateModule(res.template-module))
+    res.json(serializeTemplateModule(res.templateModule))
   })
+
+  //delete data by id
   .delete((req, res, next) => {
     TemplateModuleService.deleteTemplateModule(
       req.app.get('db'),
-      req.params.template-module_id
+      req.params.templateModule_id
     )
       .then(numRowsAffected => {
         res.status(204).end()
       })
       .catch(next)
   })
+
+  //update data by id
   .patch(jsonParser, (req, res, next) => {
     const { title, completed } = req.body
-    const template-moduleToUpdate = { title, completed }
+    const templateModuleToUpdate = { title, completed }
 
-    const numberOfValues = Object.values(template-moduleToUpdate).filter(Boolean).length
+    const numberOfValues = Object.values(templateModuleToUpdate).filter(Boolean).length
     if (numberOfValues === 0)
       return res.status(400).json({
         error: {
@@ -97,8 +116,8 @@ template-moduleRouter
 
     TemplateModuleService.updateTemplateModule(
       req.app.get('db'),
-      req.params.template-module_id,
-      template-moduleToUpdate
+      req.params.templateModule_id,
+      templateModuleToUpdate
     )
       .then(updatedTemplateModule => {
         res.status(200).json(serializeTemplateModule(updatedTemplateModule[0]))
@@ -106,4 +125,4 @@ template-moduleRouter
       .catch(next)
   })
 
-module.exports = template-moduleRouter
+module.exports = templateModuleRouter
