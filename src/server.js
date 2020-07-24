@@ -6,12 +6,12 @@ const knex = require('knex')
 const app = require('./app')
 
 //load port and live DB url from the config
-const { PORT, LIVE_DB_URL } = require('./config')
+const { PORT, LOCAL_DB_URL } = require('./config')
 
 //set up DB settings 
 const db = knex({
   client: 'pg',
-  connection: LIVE_DB_URL
+  connection: LOCAL_DB_URL
 })
 
 //send DB settings to app to be able to use them

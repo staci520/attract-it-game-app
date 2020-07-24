@@ -2,20 +2,12 @@ const GameService = {
   getGames(db) {
     return db
       .from('game')
-      .select(
-        'game.id',
-        'game.title',
-        'game.completed',
-      )
+      .select('*')
   },
   getGameById(db, game_id) {
     return db
       .from('game')
-      .select(
-        'game.id',
-        'game.title',
-        'game.completed',
-      )
+      .select('*')
       .where('game.id', game_id)
       .first()
   },

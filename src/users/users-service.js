@@ -2,20 +2,12 @@ const UserService = {
   getUsers(db) {
     return db
       .from('user')
-      .select(
-        'user.id',
-        'user.title',
-        'user.completed',
-      )
+      .select('*')
   },
   getUserById(db, user_id) {
     return db
       .from('user')
-      .select(
-        'user.id',
-        'user.title',
-        'user.completed',
-      )
+      .select('*')
       .where('user.id', user_id)
       .first()
   },

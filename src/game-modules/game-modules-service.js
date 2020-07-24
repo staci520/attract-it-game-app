@@ -1,41 +1,33 @@
 const GameModuleService = {
   getGameModules(db) {
     return db
-      .from('game-module')
-      .select(
-        'game-module.id',
-        'game-module.title',
-        'game-module.completed',
-      )
+      .from('game_modules')
+      .select('*')
   },
-  getGameModuleById(db, game-module_id) {
+  getGameModuleById(db, gameModule_id) {
     return db
-      .from('game-module')
-      .select(
-        'game-module.id',
-        'game-module.title',
-        'game-module.completed',
-      )
-      .where('game-module.id', game-module_id)
+      .from('game_modules')
+      .select('*')
+      .where('gameModule.id', gameModule_id)
       .first()
   },
   insertGameModule(db, newGameModule) {
     return db
       .insert(newGameModule)
-      .into('game-module')
+      .into('game_modules')
       .returning('*')
       .then(rows => {
         return rows[0]
       })
   },
-  deleteGameModule(db, game-module_id) {
-    return db('game-module')
-      .where({'id': game-module_id})
+  deleteGameModule(db, gameModule_id) {
+    return db('game_modules')
+      .where({'id': gameModule_id})
       .delete()
   },
-  updateGameModule(db, game-module_id, newGameModule) {
-    return db('game-module')
-      .where({id: game-module_id})
+  updateGameModule(db, gameModule_id, newGameModule) {
+    return db('game_modules')
+      .where({id: gameModule_id})
       .update(newGameModule, returning=true)
       .returning('*')
   }

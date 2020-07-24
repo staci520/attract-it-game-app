@@ -1,24 +1,24 @@
 const path = require('path')
 const express = require('express')
 const xss = require('xss')
-const GameModuleService = require('./game-module-service')
+const GameModuleService = require('./game-modules-service')
 
-const game-moduleRouter = express.Router()
+const gameModuleRouter = express.Router()
 const jsonParser = express.json()
 
-const serializeGameModule = game-module => ({
-  id: game-module.id,
-  title: xss(game-module.title),
-  completed: game-module.completed
+const serializeGameModule = gameModule => ({
+  id: gameModule.id,
+  title: xss(gameModule.title),
+  completed: gameModule.completed
 })
 
-game-moduleRouter
+gameModuleRouter
   .route('/')
   .get((req, res, next) => {
     const knexInstance = req.app.get('db')
     GameModuleService.getGameModules(knexInstance)
-      .then(game-modules => {
-        res.json(game-modules.map(serializeGameModule))
+      .then(gameModules => {
+        res.json(gameModules.map(serializeGameModule))
       })
       .catch(next)
   })
@@ -38,45 +38,45 @@ game-moduleRouter
       req.app.get('db'),
       newGameModule
     )
-      .then(game-module => {
+      .then(gameModule => {
         res
           .status(201)
-          .location(path.posix.join(req.originalUrl, `/${game-module.id}`))
-          .json(serializeGameModule(game-module))
+          .location(path.posix.join(req.originalUrl, `/${gameModule.id}`))
+          .json(serializeGameModule(gameModule))
       })
       .catch(next)
   })
 
-game-moduleRouter
+gameModuleRouter
   .route('/:game-module_id')
   .all((req, res, next) => {
-    if(isNaN(parseInt(req.params.game-module_id))) {
+    if(isNaN(parseInt(req.params.gameModule_id))) {
       return res.status(404).json({
         error: { message: `Invalid id` }
       })
     }
     GameModuleService.getGameModuleById(
       req.app.get('db'),
-      req.params.game-module_id
+      req.params.gameModule_id
     )
-      .then(game-module => {
-        if (!game-module) {
+      .then(gameModule => {
+        if (!gameModule) {
           return res.status(404).json({
             error: { message: `GameModule doesn't exist` }
           })
         }
-        res.game-module = game-module
+        res.gameModule = gameModule
         next()
       })
       .catch(next)
   })
   .get((req, res, next) => {
-    res.json(serializeGameModule(res.game-module))
+    res.json(serializeGameModule(res.gameModule))
   })
   .delete((req, res, next) => {
     GameModuleService.deleteGameModule(
       req.app.get('db'),
-      req.params.game-module_id
+      req.params.gameModule_id
     )
       .then(numRowsAffected => {
         res.status(204).end()
@@ -85,9 +85,9 @@ game-moduleRouter
   })
   .patch(jsonParser, (req, res, next) => {
     const { title, completed } = req.body
-    const game-moduleToUpdate = { title, completed }
+    const gameModuleToUpdate = { title, completed }
 
-    const numberOfValues = Object.values(game-moduleToUpdate).filter(Boolean).length
+    const numberOfValues = Object.values(gameModuleToUpdate).filter(Boolean).length
     if (numberOfValues === 0)
       return res.status(400).json({
         error: {
@@ -97,8 +97,8 @@ game-moduleRouter
 
     GameModuleService.updateGameModule(
       req.app.get('db'),
-      req.params.game-module_id,
-      game-moduleToUpdate
+      req.params.gameModule_id,
+      gameModuleToUpdate
     )
       .then(updatedGameModule => {
         res.status(200).json(serializeGameModule(updatedGameModule[0]))
@@ -106,4 +106,4 @@ game-moduleRouter
       .catch(next)
   })
 
-module.exports = game-moduleRouter
+module.exports = gameModuleRouter

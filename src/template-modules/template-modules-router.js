@@ -4,7 +4,7 @@ const express = require('express')
 const xss = require('xss')
 
 //import local service
-const TemplateModuleService = require('./template-module-service')
+const TemplateModuleService = require('./template-modules-service')
 
 //load router and jSon parser
 const templateModuleRouter = express.Router()
@@ -14,7 +14,9 @@ const jsonParser = express.json()
 const serializeTemplateModule = templateModule => ({
   id: templateModule.id,
   title: xss(templateModule.title),
-  completed: templateModule.completed
+  title_color: xss(templateModule.title_color),  
+  description: xss(templateModule.description),
+  sort_order: xss(templateModule.sort_order)
 })
 
 //define template module router (for all data)
@@ -61,7 +63,7 @@ templateModuleRouter
 templateModuleRouter
   .route('/:template-module_id')
 
-//for all routes do this
+  //for all routes do this
   .all((req, res, next) => {
     if (isNaN(parseInt(req.params.templateModule_id))) {
       return res.status(404).json({
@@ -73,15 +75,15 @@ templateModuleRouter
       req.params.templateModule_id
     )
       .then(templateModule => {
-        if(!template- module) {
-      return res.status(404).json({
-        error: { message: `TemplateModule doesn't exist` }
+        if (!template - module) {
+          return res.status(404).json({
+            error: { message: `TemplateModule doesn't exist` }
+          })
+        }
+        res.templateModule = templateModule
+        next()
       })
-    }
-    res.templateModule = templateModule
-    next()
-  })
-  .catch(next)
+      .catch(next)
   })
 
   //read data by id
