@@ -148,18 +148,18 @@ a:hover {
 
 /* TEST CODE  */
 
-<div class="cont-btn-magic">
+/* <div class="cont-btn-magic">
 			<span class="magic-copy copy-show" data-clipboard-text="swashIn"><i class="icon ion-md-copy"></i></span>
 			<div class="btn btn-outline-primary" data-test="swashIn">swashIn</div>
-		</div>
+		</div> */
 
 .card {
     outline: #a9a9a9
 }
 
 .card-body {
-    line-height: 1.7rem;
-    margin: 30px;
+    line-height: 1.6rem;
+    /* margin: 30px; */
     font-size: 17px
 }
 
@@ -249,7 +249,7 @@ a:hover {
 }
 
 .accordion {
-    margin: 25px 85px
+    /* margin: 25px 85px */
 }
 
 .accordion .card-header a:before {
@@ -485,4 +485,16 @@ a:hover {
             line-height: 1.9rem
         }
     }
+
+
+.accordion {
+    margin: 15px 65px
+}
+
+.card-body {
+    line-height: 1.7rem;
+    margin: 30px;
+    font-size: 17px
+}
+
 }
