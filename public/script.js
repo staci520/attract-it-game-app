@@ -100,7 +100,7 @@ function displayTemplateModulesSearchData(responseJson) {
                                 <form class="game-form">
                                     <div class="form-group shadow-textarea">
                                         <label for="FormControlTextarea"></label>
-                                        <textarea class="lg-textarea form-control z-depth-1" id="FormControlTextarea" rows="12"
+                                        <textarea class="lg-textarea form-control z-depth-1" id="FormControlTextarea${responseJson[i].id}" rows="12"
                                             placeholder="Insights..."></textarea>
                                     </div>
                                     <div class="button-container">

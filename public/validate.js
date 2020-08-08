@@ -44,8 +44,8 @@ function checkString(inputString) {
 
 // how to use
 
-console.log(checkString("hey"));
-console.log(checkURL("google.com"));
-console.log(validateEmail("hey@gmail.com"));
-console.log(validateUsername("Abcde-fg"));
-console.log(validatePassword("Ab1234_6"));
+// console.log(checkString("hey"));
+// console.log(checkURL("google.com"));
+// console.log(validateEmail("hey@gmail.com"));
+// console.log(validateUsername("Abcde-fg"));
+// console.log(validatePassword("Ab1234_6"));
