@@ -25,7 +25,7 @@ h4,
 h5,
 h6 {
     font-family: Lustria, serif;
-    line-height: 1.6rem
+    line-height: 1.6rem;
 }
 
 nav, section, footer {
@@ -80,7 +80,7 @@ h5 {
 h6 {
     color: #fff;
     text-align: center;
-    margin: 25px 100px 25px
+    margin: 25px 0;
 }
 
 #home-section {
@@ -242,6 +242,7 @@ a:hover {
     min-height: 150px;
     margin-bottom: 30px;
     height: 300px;
+    overflow-y: auto;
     text-align: left;
     line-height: 1.6rem
 }
