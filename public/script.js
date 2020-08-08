@@ -1,5 +1,6 @@
 'use strict';
 const apiURL = "http://localhost:8000/api"
+const loginUserId = 1
 
 // Code by Webdevtrick ( https://webdevtrick.com )
 $('.tabs .tab').click(function () {
@@ -59,6 +60,32 @@ function getTemplateModulesDataFromApi(queryTarget) {
         .catch(err => {
             console.log(err);
         });
+};
+
+function setGameGoalStatementByUserId(userInput, userId) {
+
+    
+    // //Step 2a - create the url
+    // const url = `${apiURL}/template-modules`;
+    // console.log(url);
+    // // Step 2b - make the api call using the URL, dataType (JSON or JSONP), type (GET or POST)
+    // fetch(url)
+
+    //     //Step 2c - success scenario (call the function to display the results)
+    //     .then(responseBinary => {
+    //         if (responseBinary.ok) {
+    //             return responseBinary.json();
+    //         }
+    //         // DISPLAY ERRORS if the server connection works but the json data is broken
+    //         throw new Error(responseBinary.statusText);
+    //     })
+    //     .then(responseJson => displayTemplateModulesSearchData(responseJson))
+    //     // .then(responseJson => console.log(responseJson))
+
+    //     // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
+    //     .catch(err => {
+    //         console.log(err);
+    //     });
 };
 
 
@@ -135,6 +162,7 @@ $(document).ready(function () {
     $('.login-form').submit(function (event) {
         event.preventDefault();
         console.log('login-button-clicked')
+        $(".login-user-id").val(loginUserId)
         //login as a user
         // $('#get-started-section').show();
         // $('#home-section').hide();
@@ -152,7 +180,17 @@ $(document).ready(function () {
     $('.goal-statement-form').submit(function (event) {
         event.preventDefault();
         console.log('goal-statement-button-clicked')
+        let userInput =$("#goalStatementText").val()
+        console.log(userInput)
+        let userId =$(".login-user-id").val()
+        console.log(userId)
 
+        if (userInput=="") {
+            alert("Please set your goal statement")
+        }
+        else {
+            setGameGoalStatementByUserId(userInput, userId)
+        }
     });
 
     //form trigger- game form 
