@@ -3,6 +3,7 @@ const TemplateModuleService = {
     return db
       .from('template_modules')
       .select('*')
+      .orderBy('sort_order', 'asc')
   },
   getTemplateModuleById(db, templateModule_id) {
     return db
