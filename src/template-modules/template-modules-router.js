@@ -53,7 +53,6 @@ templateModuleRouter
       .then(templateModule => {
         res
           .status(201)
-          .location(path.posix.join(req.originalUrl, `/${templateModule.id}`))
           .json(serializeTemplateModule(templateModule))
       })
       .catch(next)

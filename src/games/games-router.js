@@ -23,26 +23,29 @@ gameRouter
       .catch(next)
   })
   .post(jsonParser, (req, res, next) => {
-    const { title, completed = false } = req.body
-    const newGame = { title }
 
-    for (const [key, value] of Object.entries(newGame))
+    //get input from user
+    const { user_id, goal, start_time, end_time, status } = req.body
+
+    //if input valid, create payload to send to db
+    let payload = { user_id, goal, start_time, end_time, status }
+  
+    //validate user input
+    for (const [key, value] of Object.entries(payload))
       if (value == null)
         return res.status(400).json({
           error: { message: `Missing '${key}' in request body` }
         })
 
-    newGame.completed = completed;  
-
+    //using payload above, send to db    
     GameService.insertGame(
       req.app.get('db'),
-      newGame
+      payload 
     )
       .then(game => {
         res
           .status(201)
-          .location(path.posix.join(req.originalUrl, `/${game.id}`))
-          .json(serializeGame(game))
+          .json(game)
       })
       .catch(next)
   })
@@ -50,7 +53,7 @@ gameRouter
 gameRouter
   .route('/:game_id')
   .all((req, res, next) => {
-    if(isNaN(parseInt(req.params.game_id))) {
+    if (isNaN(parseInt(req.params.game_id))) {
       return res.status(404).json({
         error: { message: `Invalid id` }
       })

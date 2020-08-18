@@ -41,7 +41,6 @@ gameModuleRouter
       .then(gameModule => {
         res
           .status(201)
-          .location(path.posix.join(req.originalUrl, `/${gameModule.id}`))
           .json(serializeGameModule(gameModule))
       })
       .catch(next)
