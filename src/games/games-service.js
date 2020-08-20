@@ -8,7 +8,7 @@ const GameService = {
     return db
       .from('games')
       .select('*')
-      .where('game.id', game_id)
+      .where({ 'id': game_id })
       .first()
   },
   insertGame(db, newGame) {
@@ -22,13 +22,13 @@ const GameService = {
   },
   deleteGame(db, game_id) {
     return db('games')
-      .where({'id': game_id})
+      .where({ 'id': game_id })
       .delete()
   },
   updateGame(db, game_id, newGame) {
     return db('games')
-      .where({id: game_id})
-      .update(newGame, returning=true)
+      .where({ 'id': game_id })
+      .update(newGame, returning = true)
       .returning('*')
   }
 

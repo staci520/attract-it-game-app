@@ -8,8 +8,11 @@ const jsonParser = express.json()
 
 const serializeGame = game => ({
   id: game.id,
-  title: xss(game.title),
-  completed: game.completed
+  user_id: game.user_id,
+  goal: xss(game.goal),
+  start_time: game.start_time,
+  end_time: game.end_time,
+  status: game.status
 })
 
 gameRouter
@@ -87,9 +90,13 @@ gameRouter
       .catch(next)
   })
   .patch(jsonParser, (req, res, next) => {
-    const { title, completed } = req.body
-    const gameToUpdate = { title, completed }
+    console.log("Hello world")
+    //get input from user
+    const { user_id, goal, start_time, end_time, status} = req.body
+    const gameToUpdate = { user_id, goal, start_time, end_time, status }
+    console.log("WTF#@$@%", gameToUpdate)
 
+    //validate user input
     const numberOfValues = Object.values(gameToUpdate).filter(Boolean).length
     if (numberOfValues === 0)
       return res.status(400).json({
@@ -98,6 +105,7 @@ gameRouter
         }
       })
 
+      //if user input is valid, save to db
     GameService.updateGame(
       req.app.get('db'),
       req.params.game_id,
