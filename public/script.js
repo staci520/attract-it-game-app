@@ -24,6 +24,42 @@ $('.container .bg').mousemove(function (e) {
 });
 
 //jQuery Display functions
+//returns empty string if the email is NOT valid
+function validateEmail(inputEmail) {
+    let outputEmail = inputEmail;
+    //basic email validation
+    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!inputEmail.match(mailformat)) {
+        outputEmail = ""
+    }
+    return outputEmail
+}
+//returns empty string if the username is NOT valid
+function validateUsername(inputUsername) {
+    let outputUsername = inputUsername;
+    // only lowercase and uppercase letters and dash
+    let userformat = /^[a-zA-Z\-]+$/;
+    if (!inputUsername.match(userformat)) {
+        outputUsername = ""
+    }
+    return outputUsername
+}
+//returns empty string if the password is NOT valid
+function validatePassword(inputPassword) {
+    let outputPassword = inputPassword;
+    // at least one number, one lowercase and one uppercase letter
+    // at least eight characters that are letters, numbers or the underscore
+    let passwordformat = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,}$/;
+    if (!inputPassword.match(passwordformat)) {
+        outputPassword = ""
+    }
+    return outputPassword
+}
+
+// how to use
+// console.log(validateEmail("hey@gmail.com"));
+// console.log(validateUsername("Abcde-fg"));
+// console.log(validatePassword("Ab1234_6"));
 
 //Show login in landing page
 
@@ -64,7 +100,7 @@ function getTemplateModulesDataFromApi(queryTarget) {
 
 function setGameGoalStatementByUserId(userInput, userId) {
 
-    
+
     // //Step 2a - create the url
     // const url = `${apiURL}/template-modules`;
     // console.log(url);
@@ -174,18 +210,50 @@ $(document).ready(function () {
     $('.register-form').submit(function (event) {
         event.preventDefault();
         console.log('register-button-clicked')
+        let registerUserName = $("#email-signup").val()
+        console.log(registerUserName)
+        let registerPassword = $("#password-signup").val()
+        console.log(registerPassword)
+
+
+        if (validateEmail(registerUserName) == "") {
+            alert("Invalid username")
+        }
+        
+        if (validatePassword(registerPassword) == "") {
+            alert("Invalid password. Password must contain at least eight characters that are letters, numbers or the underscore")
+        }
+
+        let payload = { user_name: registerUserName, password: registerPassword }
+
+        fetch(`http://localhost:8000/api/users`, {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+    
+          })
+          .then(res =>
+            (!res.ok) ?
+            res.json().then(e => Promise.reject(e)) :
+            alert("success")
+          )
+          .catch(err => {
+            console.log('error:', err)
+          })
     });
 
     //form trigger - goal-statement-form
     $('.goal-statement-form').submit(function (event) {
         event.preventDefault();
         console.log('goal-statement-button-clicked')
-        let userInput =$("#goalStatementText").val()
+        let userInput = $("#goalStatementText").val()
         console.log(userInput)
-        let userId =$(".login-user-id").val()
+        let userId = $(".login-user-id").val()
         console.log(userId)
 
-        if (userInput=="") {
+        if (userInput == "") {
             alert("Please set your goal statement")
         }
         else {

@@ -132,7 +132,7 @@ body .login-container .content label:not([for='remember']) {
     display: none;
 }
 
-body .login-container .content input.inpt {
+body .login-container .content input.input {
     font-size: 14px;
     display: block;
     width: 100%;
@@ -147,31 +147,31 @@ body .login-container .content input.inpt {
     border-radius: 2px;
 }
 
-body .login-container .content input.inpt::-webkit-input-placeholder {
+body .login-container .content input.input::-webkit-input-placeholder {
     font-size: 14px;
     color: #999999;
     font-family: 'Lato', sans-serif;
 }
 
-body .login-container .content input.inpt:-moz-placeholder {
+body .login-container .content input.input:-moz-placeholder {
     font-size: 14px;
     color: #999999;
     font-family: 'Lato', sans-serif;
 }
 
-body .login-container .content input.inpt::-moz-placeholder {
+body .login-container .content input.input::-moz-placeholder {
     font-size: 14px;
     color: #999999;
     font-family: 'Lato', sans-serif;
 }
 
-body .login-container .content input.inpt:-ms-input-placeholder {
+body .login-container .content input.input:-ms-input-placeholder {
     font-size: 14px;
     color: #999999;
     font-family: 'Lato', sans-serif;
 }
 
-body .login-container .content input.inpt:focus {
+body .login-container .content input.input:focus {
     border-color: #999999;
 }
 
