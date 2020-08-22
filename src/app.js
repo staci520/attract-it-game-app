@@ -17,6 +17,7 @@ const gamesRouter = require('./games/games-router')
 const gameModulesRouter = require('./game-modules/game-modules-router')
 const templateModulesRouter = require('./template-modules/template-modules-router')
 const usersRouter = require('./users/users-router')
+const authRouter = require('./auth/auth-router')
 
 //create app object to be run by server
 const app = express()
@@ -45,7 +46,10 @@ app.use('/api/to-do', todoRouter)
 app.use('/api/games', gamesRouter)
 app.use('/api/game-modules', gameModulesRouter)
 app.use('/api/template-modules', templateModulesRouter)
+//register users
 app.use('/api/users', usersRouter)
+//login users
+app.use('/api/auth', authRouter)
 app.use(errorHandler)
 
 //export app object to be used in server
