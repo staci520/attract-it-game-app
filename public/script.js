@@ -2,6 +2,30 @@
 const apiURL = "http://localhost:8000/api"
 const loginUserId = 1
 
+//token service
+function saveAuthToken(token) {
+    window.sessionStorage.setItem(config.TOKEN_KEY, token)
+}
+function getAuthToken() {
+    return window.sessionStorage.getItem(config.TOKEN_KEY)
+}
+function clearAuthToken() {
+    window.sessionStorage.removeItem(config.TOKEN_KEY)
+    sessionStorage.clear();
+}
+function hasAuthToken() {
+    return !!TokenService.getAuthToken()
+}
+function makeBasicAuthToken(userName, password) {
+    return window.btoa(`${userName}:${password}`)
+}
+function saveUserId(userId) {
+    return window.sessionStorage.setItem('user_id', userId);
+}
+function getUserId(user_id) {
+    return window.sessionStorage.getItem('user_id', user_id)
+}
+
 // Code by Webdevtrick ( https://webdevtrick.com )
 $('.tabs .tab').click(function () {
     if ($(this).hasClass('signin')) {
@@ -199,6 +223,51 @@ $(document).ready(function () {
         event.preventDefault();
         console.log('login-button-clicked')
         $(".login-user-id").val(loginUserId)
+
+        let loginUserName = $("#email-signin").val()
+        console.log(loginUserName)
+        let loginPassword = $("#password-signin").val()
+        console.log(loginPassword)
+
+        if (validateEmail(loginUserName) == "") {
+            alert("Invalid username")
+        }
+
+        if (validatePassword(loginPassword) == "") {
+            alert("Invalid password. Password must contain at least eight characters that are letters, numbers or the underscore")
+        }
+
+        let payload = { user_name: loginUserName, password: loginPassword }
+
+        fetch(`http://localhost:8000/api/auth/login`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+
+        })
+
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                // DISPLAY ERRORS if the server connection works but the json data is broken
+                throw new Error(response.statusText);
+            })
+            .then(responseJson => console.log(responseJson))
+
+
+            // .then(res =>
+            //     (!res.ok) ?
+            //         res.json().then(e => Promise.reject(e)) :
+            //         console.log(res.json())
+            // )
+            .catch(err => {
+                console.log('error:', err)
+            })
+
+
         //login as a user
         // $('#get-started-section').show();
         // $('#home-section').hide();
@@ -219,7 +288,7 @@ $(document).ready(function () {
         if (validateEmail(registerUserName) == "") {
             alert("Invalid username")
         }
-        
+
         if (validatePassword(registerPassword) == "") {
             alert("Invalid password. Password must contain at least eight characters that are letters, numbers or the underscore")
         }
@@ -229,19 +298,23 @@ $(document).ready(function () {
         fetch(`http://localhost:8000/api/users`, {
             method: 'POST',
             headers: {
-              'content-type': 'application/json',
+                'content-type': 'application/json',
             },
             body: JSON.stringify(payload),
-    
-          })
-          .then(res =>
-            (!res.ok) ?
-            res.json().then(e => Promise.reject(e)) :
-            alert("success")
-          )
-          .catch(err => {
-            console.log('error:', err)
-          })
+
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                // DISPLAY ERRORS if the server connection works but the json data is broken
+                throw new Error(response.statusText);
+            })
+            .then(responseJson => console.log(responseJson))
+
+            .catch(err => {
+                console.log('error:', err)
+            })
     });
 
     //form trigger - goal-statement-form
