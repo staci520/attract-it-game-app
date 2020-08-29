@@ -1,20 +1,21 @@
 'use strict';
 const apiURL = "http://localhost:8000/api"
 const loginUserId = 1
+let TOKEN_KEY = "a"
 
 //token service
 function saveAuthToken(token) {
-    window.sessionStorage.setItem(config.TOKEN_KEY, token)
+    window.sessionStorage.setItem(TOKEN_KEY, token)
 }
 function getAuthToken() {
-    return window.sessionStorage.getItem(config.TOKEN_KEY)
+    return window.sessionStorage.getItem(TOKEN_KEY)
 }
 function clearAuthToken() {
-    window.sessionStorage.removeItem(config.TOKEN_KEY)
+    window.sessionStorage.removeItem(TOKEN_KEY)
     sessionStorage.clear();
 }
 function hasAuthToken() {
-    return !!TokenService.getAuthToken()
+    return !!getAuthToken()
 }
 function makeBasicAuthToken(userName, password) {
     return window.btoa(`${userName}:${password}`)
@@ -24,6 +25,13 @@ function saveUserId(userId) {
 }
 function getUserId(user_id) {
     return window.sessionStorage.getItem('user_id', user_id)
+}
+function logOutClick() {
+    console.log('Logging out')
+    clearAuthToken()
+    getUserId = (id) => { }
+
+    window.location = '/'
 }
 
 // Code by Webdevtrick ( https://webdevtrick.com )
@@ -255,14 +263,13 @@ $(document).ready(function () {
                 // DISPLAY ERRORS if the server connection works but the json data is broken
                 throw new Error(response.statusText);
             })
-            .then(responseJson => console.log(responseJson))
+            .then(responseJson => {
+                console.log(responseJson)
+                saveAuthToken(responseJson.authToken)
+                saveUserId(responseJson.userId)
+                $("#show-logged-in-userid").text(getAuthToken())
+            })
 
-
-            // .then(res =>
-            //     (!res.ok) ?
-            //         res.json().then(e => Promise.reject(e)) :
-            //         console.log(res.json())
-            // )
             .catch(err => {
                 console.log('error:', err)
             })
@@ -316,6 +323,14 @@ $(document).ready(function () {
                 console.log('error:', err)
             })
     });
+
+    //form trigger - logout
+
+    $(document).on('click', '#logout', function (event) {
+        event.preventDefault();
+        logOutClick();
+    });
+
 
     //form trigger - goal-statement-form
     $('.goal-statement-form').submit(function (event) {
