@@ -133,27 +133,44 @@ function getTemplateModulesDataFromApi(queryTarget) {
 function setGameGoalStatementByUserId(userInput, userId) {
 
 
-    // //Step 2a - create the url
-    // const url = `${apiURL}/template-modules`;
-    // console.log(url);
-    // // Step 2b - make the api call using the URL, dataType (JSON or JSONP), type (GET or POST)
-    // fetch(url)
+    //Step 2a - create the url
+    const url = `${apiURL}/games`;
+    console.log(url);
 
-    //     //Step 2c - success scenario (call the function to display the results)
-    //     .then(responseBinary => {
-    //         if (responseBinary.ok) {
-    //             return responseBinary.json();
-    //         }
-    //         // DISPLAY ERRORS if the server connection works but the json data is broken
-    //         throw new Error(responseBinary.statusText);
-    //     })
-    //     .then(responseJson => displayTemplateModulesSearchData(responseJson))
-    //     // .then(responseJson => console.log(responseJson))
+    let payload = {
 
-    //     // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
-    //     .catch(err => {
-    //         console.log(err);
-    //     });
+        "user_id": userId,
+        "goal": userInput,
+        "start_time": Date.now(),
+        "end_time": "",
+        "status": 0
+    }
+    //TO DO:  CHECK POST AGAINST THE DB AND BACK END
+
+    // Step 2b - make the api call using the URL, dataType (JSON or JSONP), type (GET or POST)
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+    })
+
+        //Step 2c - success scenario (call the function to display the results)
+        .then(responseBinary => {
+            if (responseBinary.ok) {
+                return responseBinary.json();
+            }
+            // DISPLAY ERRORS if the server connection works but the json data is broken
+            throw new Error(responseBinary.statusText);
+        })
+        .then(responseJson => displayTemplateModulesSearchData(responseJson))
+        // .then(responseJson => console.log(responseJson))
+
+        // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 
