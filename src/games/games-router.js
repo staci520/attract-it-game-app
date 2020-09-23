@@ -32,7 +32,8 @@ gameRouter
 
     //if input valid, create payload to send to db
     let payload = { user_id, goal, start_time, end_time, status }
-  
+    console.log("here is the payload for this game", payload)
+
     //validate user input
     for (const [key, value] of Object.entries(payload))
       if (value == null)

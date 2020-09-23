@@ -1,6 +1,6 @@
 'use strict';
 const apiURL = "http://localhost:8000/api"
-const loginUserId = 1
+const loginUserId = 6
 let TOKEN_KEY = "a"
 
 //token service
@@ -142,7 +142,7 @@ function setGameGoalStatementByUserId(userInput, userId) {
         "user_id": userId,
         "goal": userInput,
         "start_time": Date.now(),
-        "end_time": "",
+        "end_time": 0,
         "status": 0
     }
     //TO DO:  CHECK POST AGAINST THE DB AND BACK END
@@ -349,7 +349,7 @@ $(document).ready(function () {
     });
 
 
-    //form trigger - goal-statement-form
+    //form trigger - a-statement-form
     $('.goal-statement-form').submit(function (event) {
         event.preventDefault();
         console.log('goal-statement-button-clicked')

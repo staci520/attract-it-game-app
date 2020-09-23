@@ -12,6 +12,7 @@ const GameService = {
       .first()
   },
   insertGame(db, newGame) {
+    console.log("testing the new game time", newGame)
     return db
       .insert(newGame)
       .into('games')
