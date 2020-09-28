@@ -1,6 +1,6 @@
 'use strict';
 const apiURL = "http://localhost:8000/api"
-const loginUserId = 6
+const loginUserId = getUserId()
 let TOKEN_KEY = "a"
 
 //token service
@@ -214,6 +214,8 @@ function displayTemplateModulesSearchData(responseJson) {
                                         <label for="FormControlTextarea"></label>
                                         <textarea class="lg-textarea form-control z-depth-1" id="FormControlTextarea${responseJson[i].id}" rows="12"
                                             placeholder="Insights..."></textarea>
+                                            <input type="hidden" class="template-module-id" value="${responseJson[i].id}">
+                                            <input type="hidden" class="logged-in-user-id" value="${loginUserId}">
                                     </div>
                                     <div class="button-container">
                                         <input type="submit" class="btn btn-info" value="Add Session">
@@ -223,6 +225,8 @@ function displayTemplateModulesSearchData(responseJson) {
                         </div>
                     </div>
             `;
+
+            //START HERE 218 getLogin user id to save game modules in the db
         }
 
         //Step 3e - send the content of HTML results variable to the HTML
