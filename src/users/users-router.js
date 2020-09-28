@@ -35,8 +35,9 @@ usersRouter
 
     console.log("password error:", passwordError);
 
-    if (passwordError)
+    if (passwordError != '') {
       return res.status(400).json({ error: passwordError })
+    }
 
     //check if user name is duplicated
     UsersService.hasUserWithUserName(

@@ -96,12 +96,12 @@ function validatePassword(inputPassword) {
 //Show login in landing page
 
 function sectionDisplay() {
+    $('.login-only').show()
     $('#home-section').show();
     $('#get-started-section').hide();
     $('#dashboard-section').hide();
     $('#play-game-section').hide();
-    $('#site-nav').hide();
-
+    $('#site-nav').hide(); 
 };
 
 //Step 2 - define the function to make the api call; shopkeeper goes to warehouse to get shoe
@@ -241,6 +241,17 @@ $(document).ready(function () {
     // $('#get-started-section').hide();
     // $('#dashboard-section').hide();
     // $('#play-game-section').hide();
+
+    //if user is not logged in, display login page
+    if (!getAuthToken()) {
+        $('#home-section').show()
+        $('#get-started-page').hide()
+        $('#dashboard-section').hide()
+        $('#play-game-section').hide()
+        $('.login-only').hide()
+    }
+
+    
     getTemplateModulesDataFromApi()
 
     //form trigger - login
@@ -284,7 +295,13 @@ $(document).ready(function () {
                 console.log(responseJson)
                 saveAuthToken(responseJson.authToken)
                 saveUserId(responseJson.userId)
-                $("#show-logged-in-userid").text(getAuthToken())
+                //delete the line below -- used only for testing
+                // $("#show-logged-in-userid").text(getAuthToken())
+                $('.login-only').show()
+                $('#home-section').hide()
+                $('#get-started-page').show()
+                $('#dashboard-section').show()
+                $('#play-game-section').show()
             })
 
             .catch(err => {
@@ -302,11 +319,11 @@ $(document).ready(function () {
     //form trigger - register
     $('.register-form').submit(function (event) {
         event.preventDefault();
-        console.log('register-button-clicked')
+        // console.log('register-button-clicked')
         let registerUserName = $("#email-signup").val()
-        console.log(registerUserName)
+        // console.log(registerUserName)
         let registerPassword = $("#password-signup").val()
-        console.log(registerPassword)
+        // console.log(registerPassword)
 
 
         if (validateEmail(registerUserName) == "") {
@@ -318,6 +335,7 @@ $(document).ready(function () {
         }
 
         let payload = { user_name: registerUserName, password: registerPassword }
+        console.log(payload)
 
         fetch(`http://localhost:8000/api/users`, {
             method: 'POST',
@@ -334,7 +352,18 @@ $(document).ready(function () {
                 // DISPLAY ERRORS if the server connection works but the json data is broken
                 throw new Error(response.statusText);
             })
-            .then(responseJson => console.log(responseJson))
+            .then(responseJson => {
+                console.log(responseJson)
+                saveAuthToken(responseJson.authToken)
+                saveUserId(responseJson.userId)
+                //delete the line below -- used only for testing
+                // $("#show-logged-in-userid").text(getAuthToken())
+                $('.login-only').show()
+                $('#home-section').hide()
+                $('#get-started-page').show()
+                $('#dashboard-section').show()
+                $('#play-game-section').show()
+            })
 
             .catch(err => {
                 console.log('error:', err)

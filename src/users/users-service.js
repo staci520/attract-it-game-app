@@ -29,11 +29,14 @@ const UsersService = {
         if (password.length < 6) {
             return 'Password must be longer than 6 characters'
         }
-        if (password.length > 72) {
+        else if (password.length > 72) {
             return 'Password must be less than 72 characters'
         }
-        if (password.startsWith(' ') || password.endsWith(' ')) {
+        else if (password.startsWith(' ') || password.endsWith(' ')) {
             return 'Password must not start or end with empty spaces'
+        }
+        else {
+            return ''
         }
     },
     hashPassword(password) {
