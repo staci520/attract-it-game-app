@@ -1,6 +1,7 @@
 'use strict';
 const apiURL = "http://localhost:8000/api"
-const loginUserId = getUserId()
+const loginUserId = getUserId(getCurrentLoggedInUser())
+console.log(loginUserId)
 let TOKEN_KEY = "a"
 
 //token service
@@ -9,6 +10,9 @@ function saveAuthToken(token) {
 }
 function getAuthToken() {
     return window.sessionStorage.getItem(TOKEN_KEY)
+}
+function getCurrentLoggedInUser() {
+    return window.sessionStorage.getItem('user_id')
 }
 function clearAuthToken() {
     window.sessionStorage.removeItem(TOKEN_KEY)
@@ -145,8 +149,7 @@ function setGameGoalStatementByUserId(userInput, userId) {
         "end_time": 0,
         "status": 0
     }
-    //TO DO:  CHECK POST AGAINST THE DB AND BACK END
-
+  
     // Step 2b - make the api call using the URL, dataType (JSON or JSONP), type (GET or POST)
     fetch(url, {
         method: 'POST',

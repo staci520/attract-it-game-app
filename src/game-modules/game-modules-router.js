@@ -8,8 +8,10 @@ const jsonParser = express.json()
 
 const serializeGameModule = gameModule => ({
   id: gameModule.id,
-  title: xss(gameModule.title),
-  completed: gameModule.completed
+  game_id: gameModule.game_id,
+  template_modules_id: gameModule.template_modules_id,
+  notes: xss(gameModule.notes),
+  status: gameModule.status
 })
 
 gameModuleRouter
