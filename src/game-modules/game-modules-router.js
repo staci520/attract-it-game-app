@@ -25,16 +25,14 @@ gameModuleRouter
       .catch(next)
   })
   .post(jsonParser, (req, res, next) => {
-    const { title, completed = false } = req.body
-    const newGameModule = { title }
+    const { id, game_id, template_modules_id, notes, status } = req.body
+    const newGameModule = { id, game_id, template_modules_id, notes, status }
 
     for (const [key, value] of Object.entries(newGameModule))
       if (value == null)
         return res.status(400).json({
           error: { message: `Missing '${key}' in request body` }
         })
-
-    newGameModule.completed = completed;  
 
     GameModuleService.insertGameModule(
       req.app.get('db'),
@@ -49,7 +47,7 @@ gameModuleRouter
   })
 
 gameModuleRouter
-  .route('/:game-module_id')
+  .route('/:gameModule_id')
   .all((req, res, next) => {
     if(isNaN(parseInt(req.params.gameModule_id))) {
       return res.status(404).json({
@@ -85,8 +83,8 @@ gameModuleRouter
       .catch(next)
   })
   .patch(jsonParser, (req, res, next) => {
-    const { title, completed } = req.body
-    const gameModuleToUpdate = { title, completed }
+    const { id, game_id, template_modules_id, notes, status } = req.body
+    const gameModuleToUpdate = { id, game_id, template_modules_id, notes, status }
 
     const numberOfValues = Object.values(gameModuleToUpdate).filter(Boolean).length
     if (numberOfValues === 0)

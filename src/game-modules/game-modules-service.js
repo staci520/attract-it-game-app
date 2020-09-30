@@ -8,7 +8,7 @@ const GameModuleService = {
     return db
       .from('game_modules')
       .select('*')
-      .where('gameModule.id', gameModule_id)
+      .where('id', gameModule_id)
       .first()
   },
   insertGameModule(db, newGameModule) {
