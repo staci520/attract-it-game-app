@@ -1,8 +1,30 @@
 'use strict';
 const apiURL = "http://localhost:8000/api"
-const loginUserId = getUserId(getCurrentLoggedInUser())
-console.log(loginUserId)
+
 let TOKEN_KEY = "a"
+
+// animation on landing page Wrap every letter in a span
+var textWrapper = document.querySelector('.magic .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({ loop: false })
+    .add({
+        targets: '.magic .letter',
+        translateY: ["1.1em", 0],
+        translateZ: 0,
+        duration: 750,
+
+        delay: (el, i) => 50 * i
+    }).add({
+        targets: '.magic',
+        opacity: 100,
+        duration: 1000,
+
+        easing: "easeOutExpo",
+        // easing: "easeInOutSine",
+        delay: 1000,
+
+    });
 
 //token service
 function saveAuthToken(token) {
@@ -105,7 +127,7 @@ function sectionDisplay() {
     $('#get-started-section').hide();
     $('#dashboard-section').hide();
     $('#play-game-section').hide();
-    $('#site-nav').hide(); 
+    $('#site-nav').hide();
 };
 
 //Step 2 - define the function to make the api call; shopkeeper goes to warehouse to get shoe
@@ -149,7 +171,7 @@ function setGameGoalStatementByUserId(userInput, userId) {
         "end_time": 0,
         "status": 0
     }
-  
+
     // Step 2b - make the api call using the URL, dataType (JSON or JSONP), type (GET or POST)
     fetch(url, {
         method: 'POST',
@@ -167,8 +189,11 @@ function setGameGoalStatementByUserId(userInput, userId) {
             // DISPLAY ERRORS if the server connection works but the json data is broken
             throw new Error(responseBinary.statusText);
         })
-        .then(responseJson => displayTemplateModulesSearchData(responseJson))
-        // .then(responseJson => console.log(responseJson))
+        .then(responseJson => {
+            getTemplateModulesDataFromApi()
+            // displayTemplateModulesSearchData(responseJson)
+        })
+        //.then(responseJson => console.log(responseJson))
 
         // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
         .catch(err => {
@@ -196,6 +221,7 @@ function displayTemplateModulesSearchData(responseJson) {
 
         //Step 3d - populate the htmlOutut variable with all the relevant data
         for (let i = 0; i < responseJson.length; i++) {
+            //START HERE WITH MARIUS
             htmlOutput += `
                     <div class="card">
                         <div class="card-header row" id="heading${responseJson[i].id}" style="background-color: #${responseJson[i].title_color}"> 
@@ -258,14 +284,12 @@ $(document).ready(function () {
         $('.login-only').hide()
     }
 
-    
-    getTemplateModulesDataFromApi()
 
     //form trigger - login
     $('.login-form').submit(function (event) {
         event.preventDefault();
         console.log('login-button-clicked')
-        $(".login-user-id").val(loginUserId)
+
 
         let loginUserName = $("#email-signin").val()
         console.log(loginUserName)
@@ -391,7 +415,8 @@ $(document).ready(function () {
         console.log('goal-statement-button-clicked')
         let userInput = $("#goalStatementText").val()
         console.log(userInput)
-        let userId = $(".login-user-id").val()
+
+        let userId = getUserId(getCurrentLoggedInUser())
         console.log(userId)
 
         if (userInput == "") {
