@@ -141,13 +141,18 @@ function getTemplateModulesDataFromApi(queryTarget) {
 
         //Step 2c - success scenario (call the function to display the results)
         .then(responseBinary => {
-            if (responseBinary.ok) {
-                return responseBinary.json();
-            }
-            // DISPLAY ERRORS if the server connection works but the json data is broken
-            throw new Error(responseBinary.statusText);
+            console.log(responseBinary)
+            return responseBinary.json();
+            // if (responseBinary.ok) {
+            //     return responseBinary.json();
+            // }
+            // // DISPLAY ERRORS if the server connection works but the json data is broken
+            // throw new Error(responseBinary.statusText);
         })
-        .then(responseJson => displayTemplateModulesSearchData(responseJson))
+        .then(responseJson => {
+            console.log(responseJson)
+            displayTemplateModulesSearchData(responseJson)
+        })
         // .then(responseJson => console.log(responseJson))
 
         // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
@@ -157,7 +162,6 @@ function getTemplateModulesDataFromApi(queryTarget) {
 };
 
 function setGameGoalStatementByUserId(userInput, userId) {
-
 
     //Step 2a - create the url
     const url = `${apiURL}/games`;
@@ -190,6 +194,7 @@ function setGameGoalStatementByUserId(userInput, userId) {
             throw new Error(responseBinary.statusText);
         })
         .then(responseJson => {
+            console.log("Save Scottland!")
             getTemplateModulesDataFromApi()
             // displayTemplateModulesSearchData(responseJson)
         })
@@ -206,6 +211,7 @@ function setGameGoalStatementByUserId(userInput, userId) {
 function displayTemplateModulesSearchData(responseJson) {
 
     //Step 3a - console.log the results
+    console.log("London Calling!");
     console.log(responseJson);
 
     //Step 3b - if there are no results show errors (DISPLAY ERRORS if the server connection works and the json data is valid, but there are no resutls)
@@ -244,7 +250,6 @@ function displayTemplateModulesSearchData(responseJson) {
                                         <textarea class="lg-textarea form-control z-depth-1" id="FormControlTextarea${responseJson[i].id}" rows="12"
                                             placeholder="Insights..."></textarea>
                                             <input type="hidden" class="template-module-id" value="${responseJson[i].id}">
-                                            <input type="hidden" class="logged-in-user-id" value="${loginUserId}">
                                     </div>
                                     <div class="button-container">
                                         <input type="submit" class="btn btn-info" value="Add Session">
