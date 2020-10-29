@@ -25,8 +25,8 @@ gameModuleRouter
       .catch(next)
   })
   .post(jsonParser, (req, res, next) => {
-    const { id, game_id, template_modules_id, notes, status } = req.body
-    const newGameModule = { id, game_id, template_modules_id, notes, status }
+    const { game_id, template_modules_id, notes, status } = req.body
+    const newGameModule = { game_id, template_modules_id, notes, status }
 
     for (const [key, value] of Object.entries(newGameModule))
       if (value == null)

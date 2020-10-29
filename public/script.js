@@ -227,7 +227,6 @@ function displayTemplateModulesSearchData(responseJson) {
 
         //Step 3d - populate the htmlOutut variable with all the relevant data
         for (let i = 0; i < responseJson.length; i++) {
-            //START HERE WITH MARIUS
             htmlOutput += `
                     <div class="card">
                         <div class="card-header row" id="heading${responseJson[i].id}" style="background-color: #${responseJson[i].title_color}"> 
@@ -252,22 +251,19 @@ function displayTemplateModulesSearchData(responseJson) {
                                             <input type="hidden" class="template-module-id" value="${responseJson[i].id}">
                                     </div>
                                     <div class="button-container">
-                                        <input type="submit" class="btn btn-info" value="Add Session">
+                                        <input type="submit" class="submit-button-container btn btn-info" value="Add Session">
                                     </div>
                             </div>
                             </form>
                         </div>
                     </div>
             `;
-
-            //START HERE 218 getLogin user id to save game modules in the db
         }
 
         //Step 3e - send the content of HTML results variable to the HTML
         $('#accordion').html(htmlOutput);
     }
 }
-
 
 /*--- Step 3 - Using functions ---*/
 
@@ -434,11 +430,53 @@ $(document).ready(function () {
 
     //form trigger- game form 
 
-
-    $('.game-form').submit(function (event) {
+    $(".accordion").on("click", '.submit-button-container', function (event) {
         event.preventDefault();
         console.log('game-form-button-clicked')
+        let textareaUserInput = $(this).closest("form").find(".lg-textarea").val()
 
+        let moduleIdUserInput = $(this).closest("form").find(".template-module-id").val()
+        console.log(textareaUserInput, moduleIdUserInput);
+        //Step 2a - create the url
+        const url = `${apiURL}/game-modules`;
+        console.log(url);
+
+        //FIGURE OUT GAME ID - MARIUS
+        let payload = {
+            "game_id": 1,
+            "template_modules_id": moduleIdUserInput,
+            "notes": textareaUserInput,
+            "status": 1
+        }
+
+        // Step 2b - make the api call using the URL, dataType (JSON or JSONP), type (GET or POST)
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+        })
+
+            //Step 2c - success scenario (call the function to display the results)
+            .then(responseBinary => {
+                if (responseBinary.ok) {
+                    return responseBinary.json();
+                }
+                // DISPLAY ERRORS if the server connection works but the json data is broken
+                throw new Error(responseBinary.statusText);
+            })
+            .then(responseJson => {
+                console.log(responseJson)
+                //getTemplateModulesDataFromApi()
+                // displayTemplateModulesSearchData(responseJson)
+            })
+            //.then(responseJson => console.log(responseJson))
+
+            // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
+            .catch(err => {
+                console.log(err);
+            });
     });
 
 });
