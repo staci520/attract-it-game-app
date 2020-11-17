@@ -131,7 +131,7 @@ function sectionDisplay() {
 };
 
 //Step 2 - define the function to make the api call; shopkeeper goes to warehouse to get shoe
-function getTemplateModulesDataFromApi(queryTarget) {
+function getTemplateModulesDataFromApi(currentGameId) {
 
     //Step 2a - create the url
     const url = `${apiURL}/template-modules`;
@@ -151,15 +151,65 @@ function getTemplateModulesDataFromApi(queryTarget) {
         })
         .then(responseJson => {
             console.log(responseJson)
-            displayTemplateModulesSearchData(responseJson)
+            displayTemplateModulesSearchData(responseJson, currentGameId)
         })
-        // .then(responseJson => console.log(responseJson))
 
         // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
         .catch(err => {
             console.log(err);
         });
 };
+
+//Get current game module status based on current game ID and template modules ID
+function getGameModulesStatus(currentGameId, templateModuleId) {
+
+    //Step 2a - create the url
+    const url = `${apiURL}/game-modules`;
+    // console.log(url);
+    // Step 2b - make the api call using the URL, dataType (JSON or JSONP), type (GET or POST)
+    fetch(url)
+
+        //Step 2c - success scenario (call the function to display the results)
+        .then(responseBinary => {
+            // console.log(responseBinary)
+            return responseBinary.json();
+            // if (responseBinary.ok) {
+            //     return responseBinary.json();
+            // }
+            // // DISPLAY ERRORS if the server connection works but the json data is broken
+            // throw new Error(responseBinary.statusText);
+        })
+        .then(responseJson => {
+            //MARIUS - TO DO  GAME MODULES RETURNS SAME GAME ID -- SHOULD BE DIFFERENT
+            console.log(responseJson)
+            //look thru all existing game modules
+            for (let i = 0; i < responseJson.length; i++) {
+                console.log(responseJson[i])
+                console.log(responseJson[i].game_id)
+                console.log(responseJson[i].template_modules_id)
+                //if this game module matches current game module, display icon
+                if ((currentGameId == responseJson[i].game_id) && (responseJson[i].template_modules_id == templateModuleId)) {
+                    displayGameModulesStatus(responseJson[i].status)
+                }
+            }
+
+        })
+
+        // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
+        .catch(err => {
+            console.log(err);
+        });
+};
+
+//Display custom icon based on game module status
+function displayGameModulesStatus(currentGameModulesStatus) {
+    if (currentGameModulesStatus == 1) {
+        return "<p><i class='far fa-edit'></i></p>"
+    }
+    else {
+        return "<p><i class='fas fa-edit'></i></p>"
+    }
+}
 
 function setGameGoalStatementByUserId(userInput, userId) {
 
@@ -194,8 +244,9 @@ function setGameGoalStatementByUserId(userInput, userId) {
             throw new Error(responseBinary.statusText);
         })
         .then(responseJson => {
-            console.log("Save Scottland!")
-            getTemplateModulesDataFromApi()
+            // console.log(responseJson)
+            // console.log(responseJson.id)
+            getTemplateModulesDataFromApi(responseJson.id)
             // displayTemplateModulesSearchData(responseJson)
         })
         //.then(responseJson => console.log(responseJson))
@@ -208,10 +259,9 @@ function setGameGoalStatementByUserId(userInput, userId) {
 
 
 //Step 3 - display the results; sales process
-function displayTemplateModulesSearchData(responseJson) {
+function displayTemplateModulesSearchData(responseJson, currentGameId) {
 
     //Step 3a - console.log the results
-    console.log("London Calling!");
     console.log(responseJson);
 
     //Step 3b - if there are no results show errors (DISPLAY ERRORS if the server connection works and the json data is valid, but there are no resutls)
@@ -237,7 +287,7 @@ function displayTemplateModulesSearchData(responseJson) {
                                 </button>
                             </div>
                             <div class="col-sm-3 col-md-6 complete-status">
-                                <p><i class="fas fa-edit"></i></p>
+                                ${getGameModulesStatus(currentGameId, responseJson[i].id)}
                             </div>
                         </div>
                         <div id="collapse${responseJson[i].id}" class="collapse" aria-labelledby="heading${responseJson[i].id}" data-parent="#accordion">
@@ -249,6 +299,7 @@ function displayTemplateModulesSearchData(responseJson) {
                                         <textarea class="lg-textarea form-control z-depth-1" id="FormControlTextarea${responseJson[i].id}" rows="12"
                                             placeholder="Insights..."></textarea>
                                             <input type="hidden" class="template-module-id" value="${responseJson[i].id}">
+                                            <input type="hidden" class="current-game-id" value="${currentGameId}">
                                     </div>
                                     <div class="button-container">
                                         <input type="submit" class="submit-button-container btn btn-info" value="Add Session">
@@ -469,6 +520,7 @@ $(document).ready(function () {
             .then(responseJson => {
                 console.log(responseJson)
                 //getTemplateModulesDataFromApi()
+                //edit here**
                 // displayTemplateModulesSearchData(responseJson)
             })
             //.then(responseJson => console.log(responseJson))
