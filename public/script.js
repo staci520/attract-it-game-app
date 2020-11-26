@@ -53,7 +53,7 @@ function getUserId(user_id) {
     return window.sessionStorage.getItem('user_id', user_id)
 }
 function logOutClick() {
-    console.log('Logging out')
+    //console.log('Logging out')
     clearAuthToken()
     getUserId = (id) => { }
 
@@ -135,13 +135,13 @@ function getTemplateModulesDataFromApi(currentGameId) {
 
     //Step 2a - create the url
     const url = `${apiURL}/template-modules`;
-    console.log(url);
+    //console.log(url);
     // Step 2b - make the api call using the URL, dataType (JSON or JSONP), type (GET or POST)
     fetch(url)
 
         //Step 2c - success scenario (call the function to display the results)
         .then(responseBinary => {
-            console.log(responseBinary)
+            //console.log(responseBinary)
             return responseBinary.json();
             // if (responseBinary.ok) {
             //     return responseBinary.json();
@@ -150,7 +150,7 @@ function getTemplateModulesDataFromApi(currentGameId) {
             // throw new Error(responseBinary.statusText);
         })
         .then(responseJson => {
-            console.log(responseJson)
+            //console.log(responseJson)
             displayTemplateModulesSearchData(responseJson, currentGameId)
         })
 
@@ -162,7 +162,7 @@ function getTemplateModulesDataFromApi(currentGameId) {
 
 //Get current game module status based on current game ID and template modules ID
 function getGameModulesStatus(currentGameId, templateModuleId) {
-
+    //console.log(currentGameId)
     //Step 2a - create the url
     const url = `${apiURL}/game-modules`;
     // console.log(url);
@@ -180,16 +180,19 @@ function getGameModulesStatus(currentGameId, templateModuleId) {
             // throw new Error(responseBinary.statusText);
         })
         .then(responseJson => {
-            //MARIUS - TO DO  GAME MODULES RETURNS SAME GAME ID -- SHOULD BE DIFFERENT
-            console.log(responseJson)
+            //console.log(responseJson)
             //look thru all existing game modules
             for (let i = 0; i < responseJson.length; i++) {
-                console.log(responseJson[i])
-                console.log(responseJson[i].game_id)
-                console.log(responseJson[i].template_modules_id)
-                //if this game module matches current game module, display icon
+                //console.log(responseJson[i])
+
                 if ((currentGameId == responseJson[i].game_id) && (responseJson[i].template_modules_id == templateModuleId)) {
-                    displayGameModulesStatus(responseJson[i].status)
+
+                    displayGameModulesStatus(1, templateModuleId)
+                    console.log(templateModuleId, responseJson[i].notes)
+                    $("#FormControlTextarea" + templateModuleId).text(responseJson[i].notes)
+                }
+                else {
+                    displayGameModulesStatus(0, templateModuleId)
                 }
             }
 
@@ -201,21 +204,27 @@ function getGameModulesStatus(currentGameId, templateModuleId) {
         });
 };
 
-//Display custom icon based on game module status
-function displayGameModulesStatus(currentGameModulesStatus) {
+//Display custom icon based on game module status  //ICONS NEED TO BE FIXED TO RETAIN STATUS--MARIUS
+function displayGameModulesStatus(currentGameModulesStatus, templateModuleId) {
+    //by default, show the icon for status 0
+    let iconHtmlOutput = "<p><i class='fas fa-edit'></i></p>"
+    //if status is 1, change the icon to edit
     if (currentGameModulesStatus == 1) {
-        return "<p><i class='far fa-edit'></i></p>"
+        iconHtmlOutput = "<p><i class='fas fa-check-square'></i></p>"
     }
-    else {
-        return "<p><i class='fas fa-edit'></i></p>"
-    }
+    //display the icon to the dom
+    $("#heading" + templateModuleId).find(".complete-status").html(iconHtmlOutput)
 }
+
+
+
+
 
 function setGameGoalStatementByUserId(userInput, userId) {
 
     //Step 2a - create the url
     const url = `${apiURL}/games`;
-    console.log(url);
+    //console.log(url);
 
     let payload = {
 
@@ -262,7 +271,7 @@ function setGameGoalStatementByUserId(userInput, userId) {
 function displayTemplateModulesSearchData(responseJson, currentGameId) {
 
     //Step 3a - console.log the results
-    console.log(responseJson);
+    //console.log(responseJson);
 
     //Step 3b - if there are no results show errors (DISPLAY ERRORS if the server connection works and the json data is valid, but there are no resutls)
     if (responseJson.length == 0) {
@@ -296,8 +305,7 @@ function displayTemplateModulesSearchData(responseJson, currentGameId) {
                                 <form class="game-form">
                                     <div class="form-group shadow-textarea">
                                         <label for="FormControlTextarea"></label>
-                                        <textarea class="lg-textarea form-control z-depth-1" id="FormControlTextarea${responseJson[i].id}" rows="12"
-                                            placeholder="Insights..."></textarea>
+                                        <textarea class="lg-textarea form-control z-depth-1" id="FormControlTextarea${responseJson[i].id}" rows="12" placeholder="Insights..."></textarea>
                                             <input type="hidden" class="template-module-id" value="${responseJson[i].id}">
                                             <input type="hidden" class="current-game-id" value="${currentGameId}">
                                     </div>
@@ -340,13 +348,13 @@ $(document).ready(function () {
     //form trigger - login
     $('.login-form').submit(function (event) {
         event.preventDefault();
-        console.log('login-button-clicked')
+        // console.log('login-button-clicked')
 
 
         let loginUserName = $("#email-signin").val()
-        console.log(loginUserName)
+        // console.log(loginUserName)
         let loginPassword = $("#password-signin").val()
-        console.log(loginPassword)
+        //console.log(loginPassword)
 
         if (validateEmail(loginUserName) == "") {
             alert("Invalid username")
@@ -375,7 +383,7 @@ $(document).ready(function () {
                 throw new Error(response.statusText);
             })
             .then(responseJson => {
-                console.log(responseJson)
+                //console.log(responseJson)
                 saveAuthToken(responseJson.authToken)
                 saveUserId(responseJson.userId)
                 //delete the line below -- used only for testing
@@ -418,7 +426,7 @@ $(document).ready(function () {
         }
 
         let payload = { user_name: registerUserName, password: registerPassword }
-        console.log(payload)
+        //console.log(payload)
 
         fetch(`http://localhost:8000/api/users`, {
             method: 'POST',
@@ -436,7 +444,7 @@ $(document).ready(function () {
                 throw new Error(response.statusText);
             })
             .then(responseJson => {
-                console.log(responseJson)
+                //console.log(responseJson)
                 saveAuthToken(responseJson.authToken)
                 saveUserId(responseJson.userId)
                 //delete the line below -- used only for testing
@@ -464,12 +472,12 @@ $(document).ready(function () {
     //form trigger - a-statement-form
     $('.goal-statement-form').submit(function (event) {
         event.preventDefault();
-        console.log('goal-statement-button-clicked')
+        //console.log('goal-statement-button-clicked')
         let userInput = $("#goalStatementText").val()
-        console.log(userInput)
+        //console.log(userInput)
 
         let userId = getUserId(getCurrentLoggedInUser())
-        console.log(userId)
+        //console.log(userId)
 
         if (userInput == "") {
             alert("Please set your goal statement")
@@ -483,18 +491,18 @@ $(document).ready(function () {
 
     $(".accordion").on("click", '.submit-button-container', function (event) {
         event.preventDefault();
-        console.log('game-form-button-clicked')
+        //console.log('game-form-button-clicked')
         let textareaUserInput = $(this).closest("form").find(".lg-textarea").val()
+        let currentGameIdUserInput = $(this).closest("form").find(".current-game-id").val()
 
         let moduleIdUserInput = $(this).closest("form").find(".template-module-id").val()
-        console.log(textareaUserInput, moduleIdUserInput);
+        console.log(textareaUserInput, moduleIdUserInput, currentGameIdUserInput);
         //Step 2a - create the url
         const url = `${apiURL}/game-modules`;
-        console.log(url);
+        //console.log(url);
 
-        //FIGURE OUT GAME ID - MARIUS
         let payload = {
-            "game_id": 1,
+            "game_id": currentGameIdUserInput,
             "template_modules_id": moduleIdUserInput,
             "notes": textareaUserInput,
             "status": 1
@@ -519,11 +527,8 @@ $(document).ready(function () {
             })
             .then(responseJson => {
                 console.log(responseJson)
-                //getTemplateModulesDataFromApi()
-                //edit here**
-                // displayTemplateModulesSearchData(responseJson)
+                getTemplateModulesDataFromApi(currentGameIdUserInput)
             })
-            //.then(responseJson => console.log(responseJson))
 
             // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
             .catch(err => {
