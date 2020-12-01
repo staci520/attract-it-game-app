@@ -180,36 +180,40 @@ function getGameModulesStatus(currentGameId, templateModuleId) {
             // throw new Error(responseBinary.statusText);
         })
         .then(responseJson => {
-            //console.log(responseJson)
+            console.log(responseJson, templateModuleId)
             //look thru all existing game modules
             for (let i = 0; i < responseJson.length; i++) {
-                //console.log(responseJson[i])
+                console.log(currentGameId, " == ", responseJson[i].game_id, " testing ", responseJson[i].template_modules_id, " == ", templateModuleId)
 
                 if ((currentGameId == responseJson[i].game_id) && (responseJson[i].template_modules_id == templateModuleId)) {
-
+                    console.log("true")
                     displayGameModulesStatus(1, templateModuleId)
-                    console.log(templateModuleId, responseJson[i].notes)
+                    //console.log(templateModuleId, responseJson[i].notes)
                     $("#FormControlTextarea" + templateModuleId).text(responseJson[i].notes)
                 }
                 else {
+                    //console.log("false")
                     displayGameModulesStatus(0, templateModuleId)
                 }
             }
-
         })
-
         // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
         .catch(err => {
             console.log(err);
         });
 };
 
-//Display custom icon based on game module status  //ICONS NEED TO BE FIXED TO RETAIN STATUS--MARIUS
+//Display custom icon based on game module status  //ICONS NEED TO BE FIXED TO RETAIN STATUS
 function displayGameModulesStatus(currentGameModulesStatus, templateModuleId) {
+    //icon status gets overwritten even if status is not changed -- TO DO MARIUS
     //by default, show the icon for status 0
-    let iconHtmlOutput = "<p><i class='fas fa-edit'></i></p>"
+    let iconHtmlOutput = "<p>-</p>"
     //if status is 1, change the icon to edit
-    if (currentGameModulesStatus == 1) {
+    if (currentGameModulesStatus == 0) {
+        iconHtmlOutput = "<p><i class='fas fa-edit'></i></p>"
+    }
+
+    else if (currentGameModulesStatus == 1) {
         iconHtmlOutput = "<p><i class='fas fa-check-square'></i></p>"
     }
     //display the icon to the dom
@@ -296,7 +300,7 @@ function displayTemplateModulesSearchData(responseJson, currentGameId) {
                                 </button>
                             </div>
                             <div class="col-sm-3 col-md-6 complete-status">
-                                ${getGameModulesStatus(currentGameId, responseJson[i].id)}
+                            <p><i class='fas fa-edit'></i></p>
                             </div>
                         </div>
                         <div id="collapse${responseJson[i].id}" class="collapse" aria-labelledby="heading${responseJson[i].id}" data-parent="#accordion">
@@ -317,6 +321,7 @@ function displayTemplateModulesSearchData(responseJson, currentGameId) {
                         </div>
                     </div>
             `;
+            getGameModulesStatus(currentGameId, responseJson[i].id)
         }
 
         //Step 3e - send the content of HTML results variable to the HTML
